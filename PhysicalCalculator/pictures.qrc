@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/new/prefix2"/>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/">
+        <file>picters/abs.png</file>
+        <file>picters/chast.png</file>
+        <file>picters/dal.png</file>
+        <file>picters/dalnost.png</file>
+        <file>picters/dlinavoln.png</file>
+        <file>picters/kinenergia.png</file>
+        <file>picters/koll.png</file>
+        <file>picters/kolpp.png</file>
+        <file>picters/kolvesch.png</file>
+        <file>picters/kord.png</file>
+        <file>picters/maxinter.png</file>
+        <file>picters/mazt.png</file>
+        <file>picters/mininter.png</file>
+        <file>picters/opp.png</file>
+        <file>picters/otnosilmas.png</file>
+        <file>picters/par.png</file>
+        <file>picters/period.png</file>
+        <file>picters/plsav.png</file>
+        <file>picters/rasprost.png</file>
+        <file>picters/rasprot.png</file>
+        <file>picters/serp.png</file>
+        <file>picters/serrr.png</file>
+        <file>picters/silaAmpera.png</file>
+        <file>picters/silalorans.png</file>
+        <file>picters/silataz.png</file>
+        <file>picters/silatazpng.png</file>
+        <file>picters/silatoka.png</file>
+        <file>picters/topliv.png</file>
+        <file>picters/zaconArxim.png</file>
+        <file>picters/zaconNut.png</file>
+        <file>picters/zaconOma.png</file>
+        <file>picters/zacontomsa.png</file>
+        <file>picters/zas.png</file>
+    </qresource>
+</RCC>

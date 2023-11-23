@@ -1,0 +1,12 @@
+debug/dialog.o
+debug/fisic.o
+debug/graf.o
+debug/main.o
+debug/mainwindow.o
+debug/qcustomplot.o
+debug/qrc_pictures.o
+debug/moc_dialog.o
+debug/moc_fisic.o
+debug/moc_graf.o
+debug/moc_mainwindow.o
+debug/moc_qcustomplot.o

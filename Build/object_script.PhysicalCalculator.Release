@@ -1,0 +1,12 @@
+release/dialog.o
+release/fisic.o
+release/graf.o
+release/main.o
+release/mainwindow.o
+release/qcustomplot.o
+release/qrc_pictures.o
+release/moc_dialog.o
+release/moc_fisic.o
+release/moc_graf.o
+release/moc_mainwindow.o
+release/moc_qcustomplot.o
