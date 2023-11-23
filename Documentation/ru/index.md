@@ -2,10 +2,10 @@
 Пользовательская документация Physical Calculator  на русском
 
 ## Оглавление
-1. [Введение](Documentation\ru\getting-started.md)
-2. [Объяснение физики и физических формул](Documentation\ru\base-physic.md")
-3. [Поддержка](Documentation\ru\support.md)
-4. [Жизнь проект](Documentation\ru\health-project.md)
+1. [Введение](getting-started.md)
+2. [Объяснение физики и физических формул](base-physic.md)
+3. [Поддержка](support.md)
+4. [Жизнь проект](health-project.md)
 
 ## Описание коммитов
 | Название | Описание                                                        |
