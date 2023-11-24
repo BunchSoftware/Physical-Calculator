@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    setWindowIcon(QIcon(":/picters/icon-calculator.png"));
     ui->setupUi(this);
 
     connect(ui->pushButton_0,SIGNAL(clicked()),this,SLOT(digits_numbers()));

@@ -3,6 +3,7 @@ debug/fisic.o
 debug/graf.o
 debug/main.o
 debug/mainwindow.o
+debug/physical_library.o
 debug/qcustomplot.o
 debug/qrc_pictures.o
 debug/moc_dialog.o

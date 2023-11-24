@@ -6,6 +6,7 @@
 #include "dialog.h"
 
 #include "mainwindow.h"
+#include <physical_library.h>
 int indexx;
 int a;
 int sex;
@@ -16,32 +17,20 @@ fisic::fisic(QWidget *parent) :
 
 {
     ui->setupUi(this);
-    ui->lineEdit->hide();
-    ui->lineEdit->hide();
-    ui->lineEdit_2->hide();
-    ui->lineEdit_3->hide();
-    ui->lineEdit_4->hide();
-    ui->lineEdit_5->hide();
+
+    UpdateLableAndLineInWindow("","","","","");
+
     ui->pushButton->hide();
     ui->pushButton_2->show();
-    ui->label->hide();
-    ui->label_2->hide();
-    ui->label_3->hide();
-    ui->label_4->hide();
-    ui->label_5->hide();
     ui->radioButton->hide();
     ui->radioButton_2->hide();
     ui->label_6->hide();
     ui->label_7->hide();
 
+   this->setFixedSize(760,565);
+
     window1 = new graf();
     connect(window1,&graf::grafWindow,this,&MainWindow::show);
-
-
-
-
-
-
 }
 double logbase(double a, double base)
 {
@@ -177,993 +166,193 @@ void fisic::on_pushButton_clicked()
 
 void fisic::on_comboBox_activated(int index)
 {
+    ui->pushButton->show();
+    ui->pushButton_2->show();
+    ui->radioButton->hide();
+    ui->radioButton_2->hide();
+    ui->label_6->hide();
+    ui->label_7->hide();
+
+    ui->lineEdit->setText("");
+    ui->lineEdit_2->setText("");
+    ui->lineEdit_3->setText("");
+    ui->lineEdit_4->setText("");
+    ui->lineEdit_5->setText("");
+
+    indexx = index;
+    this->setFixedSize(760,565);
 
     if(index==0){
-        ui->lineEdit->hide();
-        ui->lineEdit->hide();
-        ui->lineEdit_2->hide();
-        ui->lineEdit_3->hide();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
+        UpdateLableAndLineInWindow("","","","","");
+        UpdateDescription(QPixmap(), "");
         ui->pushButton->hide();
-        ui->label->hide();
-        ui->label_2->hide();
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_6->hide();
         sex=0;
-        this->setFixedSize(250,387);
+        this->setFixedSize(250,390);
     }if(index==1){
         this->close();
-        ui->lineEdit->hide();
-        ui->lineEdit->hide();
-        ui->lineEdit_2->hide();
-        ui->lineEdit_3->hide();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
+        UpdateLableAndLineInWindow("","","","","");
+        UpdateDescription(QPixmap(), "");
         ui->pushButton->hide();
-        ui->pushButton_2->show();
-        ui->label->hide();
-        ui->label_2->hide();
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_6->hide();
-        ui->label_7->hide();
         emit firstWindow();
 
     }if (index==2){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("F");
-        ui->label_2->show();
-        ui->label_2->setText("m");
-        ui->label_3->show();
-        ui->label_3->setText("a");
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/zaconNut.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_7->setText("Второй закон Нью́то́на — дифференциальный закон механического \nдвижения, описывающий зависимость ускорения тела от \nравнодействующей всех приложенных к телу сил и массы тела.\nОдин из трёх законов Ньютона. Основной закон динамики.\n            F=ma\nF-  сумма всех сил приложенных к телу, Н.\nm-  масса тела, кг.\na – ускорение тела, 〖м/с〗^2.");
-        this->setFixedSize(761,564);
-        indexx=2;
+        UpdateLableAndLineInWindow("F","m","a","","");
+        UpdateDescription(QPixmap("://picters/zaconNut.png"), "Второй закон Нью́то́на — дифференциальный закон механического \nдвижения, описывающий зависимость ускорения тела от \nравнодействующей всех приложенных к телу сил и массы тела.\nОдин из трёх законов Ньютона. Основной закон динамики.\n            F=ma\nF-  сумма всех сил приложенных к телу, Н.\nm-  масса тела, кг.\na – ускорение тела, 〖м/с〗^2.");
         sex=3;
     }if(index==3){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->show();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("p");
-        ui->label_2->show();
-        ui->label_2->setText("q");
-        ui->label_3->show();
-        ui->label_3->setText("V");
-        ui->label_4->show();
-        ui->label_4->setText("F");
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/zaconArxim.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=3;
+        UpdateLableAndLineInWindow("p","q","V","F","");
+        UpdateDescription(QPixmap("://picters/zaconArxim.png"), "Закон Архимеда — закон гидростатики и аэростатики: на тело,\nпогружённое в жидкость или газ, действует выталкивающая сила, \nчисленно равная весу объема жидкости или газа, вытесненного телом.\n             F_a= ρgV\nF_a – сила Архимеда, [Н]. \nρ- плотность жидкости или газа, [ 〖кг/м〗^2].\ng – ускорение свободного падения, [ м/с^2].\nV- объем части тела, погруженной в жидкость или газ, [ м^3]. ");
         sex=4;
-        ui->label_7->show();
-        ui->label_7->setText("Закон Архимеда — закон гидростатики и аэростатики: на тело,\nпогружённое в жидкость или газ, действует выталкивающая сила, \nчисленно равная весу объема жидкости или газа, вытесненного телом.\n             F_a= ρgV\nF_a – сила Архимеда, [Н]. \nρ- плотность жидкости или газа, [ 〖кг/м〗^2].\ng – ускорение свободного падения, [ м/с^2].\nV- объем части тела, погруженной в жидкость или газ, [ м^3]. ");
-        this->setFixedSize(761,564);
-
-
     }if(index==4){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("порядок спектра ");
-        ui->label_2->show();
-        ui->label_2->setText("лямбда");
-        ui->label_3->show();
-        ui->label_3->setText("разность хода ");
-        ui->label_4->hide();
-        ui->label_5->hide();
+        UpdateLableAndLineInWindow("порядок спектра","лямбда","разность хода","","");
+        UpdateDescription(QPixmap(), "");
         ui->radioButton->show();
         ui->radioButton_2->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        indexx=4;
         sex=3;
-        this->setFixedSize(250,564);
+        this->setFixedSize(250,565);
     }if(index==5){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("U ");
-        ui->label_2->show();
-        ui->label_2->setText("R");
-        ui->label_3->show();
-        ui->label_3->setText("I ");
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
+        UpdateLableAndLineInWindow("U","R","I","","");
+        UpdateDescription(QPixmap("://picters/zaconOma.png"), "Сила тока в проводнике прямо пропорциональна напряжению на \nконцах проводника\n           R=  U/I\nR - сопротивление\nU - напряжение\nI – сила тока");
         //QPixmap pix(":/new/prefix1/картинки/silatoka.png");
-        QPixmap pix("://picters/zaconOma.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=5;
         sex=3;
-        ui->label_7->show();
-        ui->label_7->setText("Сила тока в проводнике прямо пропорциональна напряжению на \nконцах проводника\n           R=  U/I\nR - сопротивление\nU - напряжение\nI – сила тока");
-        this->setFixedSize(761,564);
     }if(index==6){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->hide();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("E_0");
-        ui->label_2->show();
-        ui->label_2->setText("m");
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/otnosilmas.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=6;
+        UpdateLableAndLineInWindow("E","m","","","");
+        UpdateDescription(QPixmap("://picters/otnosilmas.png"), "Увеличение массы при увеличении скорости относительно массы \nтела в покое\n               E_0=〖mc〗^2 \nE_0 - энергия\nm - масса\nc - скорость света");
         sex=2;
-        ui->label_7->show();
-        ui->label_7->setText("Увеличение массы при увеличении скорости относительно массы \nтела в покое\n               E_0=〖mc〗^2 \nE_0 - энергия\nm - масса\nc - скорость света");
-        this->setFixedSize(761,564);
     }
     if(index==7){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->show();
-        ui->lineEdit_5->show();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("Fam");
-        ui->label_2->show();
-        ui->label_2->setText("B");
-        ui->label_3->show();
-        ui->label_3->setText("I");
-        ui->label_4->show();
-        ui->label_4->setText("l");
-        ui->label_5->show();
-        ui->label_5->setText("a");
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/silaAmpera.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=7;
+        UpdateLableAndLineInWindow("Fam","B","I","l","a");
+        UpdateDescription(QPixmap("://picters/silaAmpera.png"), "Это сила, с которой магнитное поле действует на помещенный в него\nпроводник с током.\n            F=B*I*L*sin ⁡a\nB – магнитное поле\nI – сила тока\nL –длин fпроводника\nsin a – угол падения на магнитное поле");
         sex=5;
-        ui->label_7->show();
-        ui->label_7->setText("Это сила, с которой магнитное поле действует на помещенный в него\nпроводник с током.\n            F=B*I*L*sin ⁡a\nB – магнитное поле\nI – сила тока\nL –длин fпроводника\nsin a – угол падения на магнитное поле");
-        this->setFixedSize(761,564);
     }
     if(index==8){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("Ek");
-        ui->label_2->show();
-        ui->label_2->setText("m");
-        ui->label_3->show();
-        ui->label_3->setText("v");
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_7->show();
-        ui->label_7->setText("Физическая величина, характеризующая состояние тела или системы \nтел по их движению \n              E=  〖mV〗^2/2 \nE – кинетическая энергия \nm – масса тела \nV – скорость тела ");
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/kinenergia.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=8;
+        UpdateLableAndLineInWindow("Ek","m","v","","");
+        UpdateDescription(QPixmap("://picters/kinenergia.png"), "Физическая величина, характеризующая состояние тела или системы \nтел по их движению \n              E=  〖mV〗^2/2 \nE – кинетическая энергия \nm – масса тела \nV – скорость тела ");
         sex=3;
-        this->setFixedSize(761,564);
     }
     if(index==9){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->show();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->show();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        ui->label->setText("Заряд 1 тела");
-        ui->label_2->setText("Заряд 2 тела");
-        ui->label_3->setText("Расстояние между\nтелами");
-        ui->label_4->setText("Сила Кулона * 9*10^9");
-        QPixmap pix("://picters/zas.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_7->setText("Величина электрической силы между двумя точечными зарядами в \nвакууме прямо пропорциональна произведению модулей зарядов и\nобратно пропорциональна квадрату расстояния между ними.\nF=k  (q1*q2)/r^2 \nF – сила Кулона \nk -  коэффициент пропорциональности\nq1, q2 - взаимодействующие тела\nr - расстояние между телами");
-        indexx=9;
+        UpdateLableAndLineInWindow("Заряд 1 тела","Заряд 2 тела","Расстояние между\nтелами","Сила Кулона * 9*10^9","");
+        UpdateDescription(QPixmap("://picters/zas.png"), "Величина электрической силы между двумя точечными зарядами в \nвакууме прямо пропорциональна произведению модулей зарядов и\nобратно пропорциональна квадрату расстояния между ними.\nF=k  (q1*q2)/r^2 \nF – сила Кулона \nk -  коэффициент пропорциональности\nq1, q2 - взаимодействующие тела\nr - расстояние между телами");
         sex=4;
-        this->setFixedSize(761,564);
     }
     if (index==10){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->show();
-        ui->lineEdit_5->show();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->show();
-        ui->label_5->show();
-        ui->label->setText("Угол");
-        ui->label_2->setText("Индуктивность (B)");
-        ui->label_3->setText("Скорость (v)");
-        ui->label_4->setText("Заряд (q)");
-        ui->label_5->setText("Сила (F)");
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/silalorans.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=10;
+        UpdateLableAndLineInWindow("Угол","Индуктивность (B)","Скорость (v)","Заряд (q)","Сила (F)");
+        UpdateDescription(QPixmap("://picters/silalorans.png"), "Сила, с которой магнитное поле действует на заряженную частицу, \nдвижущуюся в этом поле\n          F=q(E +VB)\nq - заряд частицы\nE - напряженность электрического поля\nV - скорость частицы\nB - магнитная индукция");
         sex=5;
-        ui->label_7->show();
-        ui->label_7->setText("Сила, с которой магнитное поле действует на заряженную частицу, \nдвижущуюся в этом поле\n          F=q(E +VB)\nq - заряд частицы\nE - напряженность электрического поля\nV - скорость частицы\nB - магнитная индукция");
-        this->setFixedSize(761,564);
     }
     if(index==11){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->hide();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label_7->show();
-        ui->label_7->setText("Частота колебаний — число полных колебаний тела за одну секунду \n               v=  1/T \nv – частота колебаний \nT – период колебаний ");
-        ui->label->setText("Частота (V)");
-        ui->label_2->setText("Период (Т)");
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/chast.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=11;
+        UpdateLableAndLineInWindow("Частота (V)","Период (Т)","","","");
+        UpdateDescription(QPixmap("://picters/chast.png"), "Частота колебаний — число полных колебаний тела за одну секунду \n               v=  1/T \nv – частота колебаний \nT – период колебаний ");
         sex=2;
-        this->setFixedSize(761,564);
     }
     if(index==12){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("индуктивность контура");
-        ui->label_2->setText("емкость контура ");
-        ui->label_3->setText("колебания в контуре");
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/zacontomsa.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=12;
+        UpdateLableAndLineInWindow("индуктивность контура","емкость контура","колебания в контуре","","");
+        UpdateDescription(QPixmap("://picters/zacontomsa.png"), "Формула Томсона — математическое выражение связывающее \nсобственную частоту, индуктивность и ёмкость электрических или \nэлектромагнитных колебаний в электрическом колебательном контуре\n       T₀ = 1/f₀ = 2π√LC = 2π/w₀ = 2π/(1/√LC) = 2π √LC\nf₀ - частота собственных колебаний\nw₀ - угловая частота собственных колебаний\nL – индуктивность\nС – ёмкость");
         sex=3;
-        ui->label_7->show();
-        ui->label_7->setText("Формула Томсона — математическое выражение связывающее \nсобственную частоту, индуктивность и ёмкость электрических или \nэлектромагнитных колебаний в электрическом колебательном контуре\n       T₀ = 1/f₀ = 2π√LC = 2π/w₀ = 2π/(1/√LC) = 2π √LC\nf₀ - частота собственных колебаний\nw₀ - угловая частота собственных колебаний\nL – индуктивность\nС – ёмкость");        this->setFixedSize(761,564);
     }
     if(index==13){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("m");
-        ui->label_2->setText("k");
-        ui->label_3->setText("T");
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/mazt.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=13;
+        UpdateLableAndLineInWindow("m","k","T","","");
+        UpdateDescription(QPixmap("://picters/mazt.png"), "Период колебания пружинного маятника – зависит от жесткости \nпружины: с увеличением коэффициента жесткости пружины период \nколебания маятника уменьшается\n               T=2*pi*sqrt(m/k)\n               T=2 * √(m*k)\nT – период колебания пружинного маятника\n - постоянная\nm – масса груза\nk – жесткость пружины");
         sex=3;
-        ui->label_7->show();
-        ui->label_7->setText("Период колебания пружинного маятника – зависит от жесткости \nпружины: с увеличением коэффициента жесткости пружины период \nколебания маятника уменьшается\n               T=2*pi*sqrt(m/k)\n               T=2 * √(m*k)\nT – период колебания пружинного маятника\n - постоянная\nm – масса груза\nk – жесткость пружины");
-        this->setFixedSize(761,564);
     }
     if(index==14){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->hide();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("t ");
-        ui->label_2->show();
-        ui->label_2->setText("h");
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/serrr.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=14;
+        UpdateLableAndLineInWindow("t","h","","","");
+        UpdateDescription(QPixmap("://picters/serrr.png"), "");
         sex=2;
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
     }
     if(index==15){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->hide();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("t ");
-        ui->label_2->show();
-        ui->label_2->setText("v");
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/serrr.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=15;
-        sex=2;
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("t","v","","","");
+        UpdateDescription(QPixmap("://picters/serrr.png"), "");
     }
     if(index==16){
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->show();
-        ui->lineEdit_5->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label->setText("N ");
-        ui->label_2->show();
-        ui->label_2->setText("No");
-        ui->label_3->show();
-        ui->label_3->setText("t");
-        ui->label_4->show();
-        ui->label_4->setText("T");
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/period.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        indexx=16;
+        UpdateLableAndLineInWindow("N","No","t","T","");
+        UpdateDescription(QPixmap("://picters/period.png"), "Время в течении которого количество частиц  и интенсивность \nреакции распада уменьшаются в двое\n             N=N0×(1/2)^t/T\nN0- исходное кол-во вещества \nt- время прошедшее с начала распада \nT- период полураспада ");
         sex=4;
-        ui->label_7->show();
-        ui->label_7->setText("Время в течении которого количество частиц  и интенсивность \nреакции распада уменьшаются в двое\n             N=N0×(1/2)^t/T\nN0- исходное кол-во вещества \nt- время прошедшее с начала распада \nT- период полураспада ");
-        this->setFixedSize(761,564);
     }
     //Длина волны
     if (index==17)
     {
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->label->setText("T =");
-        ui->label_2->setText("u =");
-        ui->label_3->setText("lam =");
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->pushButton->show();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        QPixmap pix("://picters/dlinavoln.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        ui->label_7->show();
-        ui->label_7->setText("длина волны, которая проявляется у всех частиц в квантовой \nмеханике согласно корпускулярно-волновому дуализму, и \nопределяющая плотность вероятности обнаружения объекта в \nзаданной точке конфигурационного пространства. Длина волны де \nБройля обратно пропорциональна импульсу частицы\n                   λ= h/p\n λ – длина волны\nh - постоянная планка\np – конечный импульс");
-        this->setFixedSize(761,564);
-        indexx=17;
+        UpdateLableAndLineInWindow("T ="," u =","lam =","","");
+        UpdateDescription(QPixmap("://picters/dlinavoln.png"), "длина волны, которая проявляется у всех частиц в квантовой \nмеханике согласно корпускулярно-волновому дуализму, и \nопределяющая плотность вероятности обнаружения объекта в \nзаданной точке конфигурационного пространства. Длина волны де \nБройля обратно пропорциональна импульсу частицы\n                   λ= h/p\n λ – длина волны\nh - постоянная планка\np – конечный импульс");
         sex=3;
     }
     //Средняя скорость и ускорение тела
     if (index==18)
     {
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->label->setText("S =");
-        ui->label_2->setText("t =");
-        ui->label_3->setText("v =");
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        QPixmap pix("://picters/serp.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_7->setText("Отношениее растояние, пройденного тола и времени, затраченого на путь\n            v=S/t\nv-скорость\nS-растояние\nT-время");
-        this->setFixedSize(761,564);
-        indexx=18;
+        UpdateLableAndLineInWindow("S =","t =","v =","","");
+        UpdateDescription(QPixmap("://picters/serp.png"), "Отношениее растояние, пройденного тола и времени, затраченого на путь\n            v=S/t\nv-скорость\nS-растояние\nT-время");
         sex=3;
     }
     //Абсолютная температура
     if (index==19)
     {
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->hide();
-        ui->pushButton->show();
-        ui->label_3->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->label->setText("t =");
-        ui->label_2->setText("T =");
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/abs.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_7->setText("Это температура измеряеемая в кельвинах\n         T=t+T0\nt-температура в С\nT0=273К");
-        this->setFixedSize(761,564);
-        indexx=19;
+        UpdateLableAndLineInWindow("t =","T =","","","");
+        UpdateDescription(QPixmap("://picters/abs.png"), "Это температура измеряеемая в кельвинах\n         T=t+T0\nt-температура в С\nT0=273К");
         sex=2;
     }
     //Кол-во вещества
     if (index==20)
     {
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->pushButton->show();
-        ui->label_3->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->label->setText("m =");
-        ui->label_2->setText("M =");
-        ui->label_3->setText("v =");
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/kolpp.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_7->setText("Кол-во однотипных структурных едениц содержащихся в веществе \n        v=m/M\nm-масса веществ\nM-молярная масса ");
-        this->setFixedSize(761,564);
-        indexx=20;
+        UpdateLableAndLineInWindow("m =","M =","v =","","");
+        UpdateDescription(QPixmap("://picters/kolpp.png"), "Кол-во однотипных структурных едениц содержащихся в веществе \n        v=m/M\nm-масса веществ\nM-молярная масса ");
         sex=3;
     }
     //Концентрация молекул(атомов)
     if (index==21)
     {
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->pushButton->show();
-        ui->label_3->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->label->setText("N =");
-        ui->label_2->setText("V =");
-        ui->label_3->setText("n =");
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/kolvesch.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_7->setText("величина, количественно характеризующая содержание компонента \nотносительно всей смеси.\n                       Cм=  m/(M*V)\nCм –молярная концентрация\nm – масса растворенного в растворе вещества\nM – молярная масса растворенного вещества \nV – объем рествора");
-        this->setFixedSize(761,564);
-        indexx=21;
+        UpdateLableAndLineInWindow("N =","V =","n =","","");
+        UpdateDescription(QPixmap("://picters/kolvesch.png"), "величина, количественно характеризующая содержание компонента \nотносительно всей смеси.\n                       Cм=  m/(M*V)\nCм –молярная концентрация\nm – масса растворенного в растворе вещества\nM – молярная масса растворенного вещества \nV – объем рествора");
         sex=3;
     }
     if (index==22)
     {
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->label->show();
-        ui->pushButton->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->label->setText("λ=");
-            ui->label_2->setText("V =");
-        ui->label_3->setText("T =");
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/rasprot.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_7->setText("расстояние, на которое распространяется волна в еденицу времени\n                    V = λ/T\nλ - длина волны\nT - период колебаний\nV - скорость ее распространения ");
-        this->setFixedSize(761,564);
-        indexx=22;
+        UpdateLableAndLineInWindow("λ =","V =","T =","","");
+        UpdateDescription(QPixmap("://picters/rasprot.png"), "расстояние, на которое распространяется волна в еденицу времени\n                    V = λ/T\nλ - длина волны\nT - период колебаний\nV - скорость ее распространения ");
         sex=3;
     }
     if(index==23){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->hide();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("Начальная координата");
-        ui->label_2->setText("Время падения");
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        QPixmap pix("://picters/kord.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        indexx=23;
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("Начальная координата","Время падения","","","");
+        UpdateDescription(QPixmap("://picters/kord.png"), "");
         sex=2;
     }
     if(index==24){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("Расстояние");
-        ui->label_2->setText("Начальная скорость");
-        ui->label_3->setText("Время");
-        QPixmap pix("://picters/dalnost.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        indexx=24;
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("Расстояние","Начальная скорость","Время","","");
+        UpdateDescription(QPixmap("://picters/dalnost.png"), "");
         sex=3;
     }
     if(index==25){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("Потенциальная энергия");
-        ui->label_2->setText("Масса");
-        ui->label_3->setText("Высота");
-        QPixmap pix("://picters/dal.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        indexx=25;
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("Потенциальная энергия","Масса","Высота","","");
+        UpdateDescription(QPixmap("://picters/dal.png"), "");
         sex=3;
     }
     if(index==26){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->hide();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("Сила тяжести");
-        ui->label_2->setText("Масса");
-        QPixmap pix("://picters/silataz.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        indexx=26;
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("Сила тяжести","Масса","","","");
+        UpdateDescription(QPixmap("://picters/silataz.png"), "");
         sex=2;
     }
     if(index==27){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->show();
-        ui->lineEdit_5->show();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->show();
-        ui->label_5->show();
-        ui->label->setText("Количество теплоты");
-        ui->label_2->setText("Теплоемкость");
-        ui->label_3->setText("Масса");
-        ui->label_4->setText("Начальная температура");
-        ui->label_5->setText("Конечная температура");
-        QPixmap pix("://picters/koll.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        indexx=27;
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("Количество теплоты","Теплоемкость","Начальная температура","Конечная температура","");
+        UpdateDescription(QPixmap("://picters/koll.png"), "");
         sex=5;
     }
     if(index==28){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("Количество теплоты");
-        ui->label_2->setText("Удельная теплота плавления");
-        ui->label_3->setText("Масса");
-        indexx=28;
-        QPixmap pix("://picters/plsav.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("Количество теплоты","Удельная теплота плавления","Масса","","");
+        UpdateDescription(QPixmap("://picters/plsav.png"), "");
         sex=3;
     }
     if(index==29){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("Количество теплоты");
-        ui->label_2->setText("Удельная теп. парооб.");
-        ui->label_3->setText("Масса");
-        indexx=29;
-        QPixmap pix("://picters/par.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("Количество теплоты","Удельная теп. парооб.","Масса","","");
+        UpdateDescription(QPixmap("://picters/par.png"), "");
         sex=3;
     }
     if(index==30){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->hide();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->hide();
-        ui->label_5->hide();
-        ui->label->setText("Количество теплоты");
-        ui->label_2->setText("Удельная теп. сгорания");
-        ui->label_3->setText("Масса");
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        indexx=30;
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_7->show();
-        ui->label_7->setText("физико-химический процесс перехлда из исходного  вещества в \nпродукты сгорания сопровождающийся интенивным выделением \nтепла \n                              Q = q*m\nq - удельная теплота сгорания \nm - масса вещества  ");
-        this->setFixedSize(761,564);
-        QPixmap pix("://picters/topliv.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
+        UpdateLableAndLineInWindow("Количество теплоты","Удельная теп. сгорания","Масса","","");
+        UpdateDescription(QPixmap("://picters/topliv.png"), "физико-химический процесс перехлда из исходного  вещества в \nпродукты сгорания сопровождающийся интенивным выделением \nтепла \n                              Q = q*m\nq - удельная теплота сгорания \nm - масса вещества  ");
         sex=3;
     }
     if(index==31){
-        ui->pushButton->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->show();
-        ui->lineEdit_5->hide();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->show();
-        ui->label_5->hide();
-        ui->label->setText("Сопротивление");
-        ui->label_2->setText("Удельное сопротивление");
-        ui->label_3->setText("Длина проводника");
-        ui->label_4->setText("Площадь попереч. сеч.");
-        indexx=31;
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->lineEdit_4->setText("");
-        ui->lineEdit_5->setText("");
-        QPixmap pix("://picters/opp.png");
-        ui->label_6->setPixmap(pix);
-        ui->label_6->show();
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_7->show();
-        ui->label_7->setText("");
-        this->setFixedSize(761,564);
+        UpdateLableAndLineInWindow("Сопротивление","Удельное сопротивление","Длина проводника","Площадь попереч. сеч.","");
+        UpdateDescription(QPixmap("://picters/opp.png"), "");
         sex=4;
     }
 
@@ -1173,24 +362,14 @@ void fisic::on_comboBox_activated(int index)
 void fisic::on_radioButton_2_clicked()
 {
     a=1;///минимум
-    QPixmap pix("://picters/mininter.png");
-    ui->label_6->setPixmap(pix);
-    ui->label_7->show();
-    ui->label_7->setText("Если разность хода волн равна нечетному числу полуволн, то в \nточке наложения этих волн образуется интерференционный минимум.\nПри сложении колебаний с разной частотой происходит обнуление");
-    this->setFixedSize(761,564);
-    ui->label_6->show();
+    UpdateDescription(QPixmap("://picters/mininter.png"), "Если разность хода волн равна нечетному числу полуволн, то в \nточке наложения этих волн образуется интерференционный минимум.\nПри сложении колебаний с разной частотой происходит обнуление");
 }
 
 
 void fisic::on_radioButton_clicked()
 {
     a=2;///максимум
-    QPixmap pix("://picters/maxinter.png");
-    ui->label_6->setPixmap(pix);
-    ui->label_7->show();
-    ui->label_7->setText("Разность хода волн равна целому числу длин волн (иначе чётному \nчислу длин полуволн) \nПри сложении колебаний с равной частотой происходит обнуление ");
-    this->setFixedSize(761,564);
-    ui->label_6->show();
+    UpdateDescription(QPixmap("://picters/maxinter.png"), "Разность хода волн равна целому числу длин волн (иначе чётному \nчислу длин полуволн) \nПри сложении колебаний с равной частотой происходит обнуление ");
 }
 
 
@@ -1827,5 +1006,87 @@ void fisic::ras()
             s =(p*l)/r ;
             ui->lineEdit_4->setText(QString::number(s));
         }
+    }
+}
+
+void fisic::UpdateLableAndLineInWindow(QString textLabel1, QString textLabel2, QString textLabel3, QString textLabel4, QString textLabel5){
+    if(textLabel1.isEmpty()){
+     ui->lineEdit->hide();
+     ui->label->hide();
+    }
+    else{
+    ui->label->show();
+    ui->label->setText(textLabel1);
+    ui->lineEdit->show();
+    }
+    if(textLabel2.isEmpty()){
+    ui->lineEdit_2->hide();
+     ui->label_2->hide();
+    }
+else{
+ui->label_2->show();
+    ui->label_2->setText(textLabel2);
+ui->lineEdit_2->show();
+}
+    if(textLabel3.isEmpty()){
+    ui->lineEdit_3->hide();
+    ui->label_3->hide();
+    }
+else{
+ui->label_3->show();
+    ui->label_3->setText(textLabel3);
+ui->lineEdit_3->show();
+}
+    if(textLabel4.isEmpty()){
+    ui->lineEdit_4->hide();
+    ui->label_4->hide();
+    }
+else{
+ui->label_4->show();
+    ui->label_4->setText(textLabel4);
+ui->lineEdit_4->show();
+}
+    if(textLabel5.isEmpty()){
+    ui->lineEdit_5->hide();
+    ui->label_5->hide();
+    }
+else{
+ui->label_5->show();
+    ui->label_5->setText(textLabel5);
+ui->lineEdit_5->show();
+}
+}
+void fisic::UpdateDescription(QPixmap image, QString textLabel){
+    if(image.isNull()){
+      ui->label_6->hide();
+    }
+    else{
+      ui->label_6->show();
+      ui->label_6->setPixmap(image);
+    }
+    if(textLabel.isEmpty()){
+        ui->label_7->hide();
+    }
+    else{
+      ui->label_7->show();
+      ui->label_7->setText(textLabel);
+    }
+    ui->label_7->show();
+}
+void fisic::UpdateLineEdit(QString textLineEdit1, QString textLineEdit2, QString textLineEdit3, QString textLineEdit4, QString textLineEdit5){
+    if (ui->lineEdit->text().isEmpty()) {
+        ui->lineEdit->setText(textLineEdit1);
+    }
+    else if (ui->lineEdit_2->text().isEmpty()){
+        ui->lineEdit_2->setText(textLineEdit2);
+    }
+    else if (ui->lineEdit_3->text().isEmpty()){
+        ui->lineEdit_3->setText(textLineEdit3);
+    }
+    else if (ui->lineEdit_4->text().isEmpty()){
+       ui->lineEdit_4->setText(textLineEdit4);
+    }
+    else if(ui->lineEdit_5->text().isEmpty()){
+       ui->lineEdit_5->setText(textLineEdit5);
     }
 }

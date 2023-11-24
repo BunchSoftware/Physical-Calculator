@@ -35,5 +35,12 @@
         <file>picters/zaconOma.png</file>
         <file>picters/zacontomsa.png</file>
         <file>picters/zas.png</file>
+        <file>picters/Close.png</file>
+        <file>picters/icon-back-arrow.png</file>
+        <file>picters/icon-calculator.png</file>
+        <file>picters/icon-menu.png</file>
+        <file>picters/icon-settings.png</file>
+        <file>picters/Maximize.png</file>
+        <file>picters/Minimize.png</file>
     </qresource>
 </RCC>

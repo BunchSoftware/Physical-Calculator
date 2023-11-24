@@ -3,6 +3,7 @@ release/fisic.o
 release/graf.o
 release/main.o
 release/mainwindow.o
+release/physical_library.o
 release/qcustomplot.o
 release/qrc_pictures.o
 release/moc_dialog.o
