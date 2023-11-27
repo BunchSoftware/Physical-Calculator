@@ -64,17 +64,12 @@
    </property>
    <item>
     <property name="text">
-     <string>парабола</string>
+     <string>Парабола</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>линейная</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>эьблема</string>
+     <string>Линейная</string>
     </property>
    </item>
   </widget>

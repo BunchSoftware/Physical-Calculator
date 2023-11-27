@@ -3,7 +3,6 @@
 #include "graf.h"
 #include <string>
 #include <QMainWindow>
-#include <physical_library.h>
 using namespace std;
 
 namespace Ui {
@@ -16,7 +15,6 @@ class fisic : public QMainWindow
 
 public:
     explicit fisic(QWidget *parent = nullptr);
-    Physics physics;
 
     ~fisic();
 signals:
@@ -32,10 +30,13 @@ private slots:
     void on_radioButton_clicked();
 
     void on_pushButton_2_clicked();
-    void ras();
+    void Calclulate();
     void UpdateLableAndLineInWindow(QString textLabel1, QString textLabel2, QString textLabel3, QString textLabel4, QString textLabel5);
     void UpdateDescription(QPixmap image, QString textLabel);
     void UpdateLineEdit(QString textLineEdit1, QString textLineEdit2, QString textLineEdit3, QString textLineEdit4, QString textLabel5);
+    void Error();
+    QString FromFloatToString(float value);
+    void CheckLineEditIsEmpty(QString text, QString text2, QString text3, QString text4, QString text5);
 
 
 private:

@@ -14,7 +14,6 @@ SOURCES += \
     graf.cpp \
     main.cpp \
     mainwindow.cpp \
-    physical_library.cpp \
     qcustomplot.cpp
 
 HEADERS += \
@@ -22,7 +21,6 @@ HEADERS += \
     fisic.h \
     graf.h \
     mainwindow.h \
-    physical_library.h \
     qcustomplot.h
 
 FORMS += \

@@ -54,7 +54,6 @@ public:
         comboBox = new QComboBox(graf);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
-        comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
         comboBox->setGeometry(QRect(30, 50, 131, 22));
         label = new QLabel(graf);
@@ -101,9 +100,8 @@ public:
     void retranslateUi(QWidget *graf)
     {
         graf->setWindowTitle(QCoreApplication::translate("graf", "Form", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("graf", "\320\277\320\260\321\200\320\260\320\261\320\276\320\273\320\260", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("graf", "\320\273\320\270\320\275\320\265\320\271\320\275\320\260\321\217", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("graf", "\321\215\321\214\320\261\320\273\320\265\320\274\320\260", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("graf", "\320\237\320\260\321\200\320\260\320\261\320\276\320\273\320\260", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("graf", "\320\233\320\270\320\275\320\265\320\271\320\275\320\260\321\217", nullptr));
 
         label->setText(QCoreApplication::translate("graf", "a", nullptr));
         label_2->setText(QCoreApplication::translate("graf", "b", nullptr));

@@ -2,21 +2,23 @@
 #include "ui_graf.h"
 #include "mainwindow.h"
 #include <math.h>
-int indexx1;
+int indexChooseGraf;
 
 graf::graf(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::graf)
 {
     ui->setupUi(this);
+
+    setWindowTitle("Physical Calculator: Построение графиков");
+    setWindowIcon(QIcon(":/picters/icon-calculator.png"));
+
     h=0.1;
     xBegin = -3;
     xEnd =3+h;
     ui->widget->xAxis->setRange(-6,6);
     ui->widget->yAxis->setRange(0,12);
     N=(xEnd-xBegin)/h+2;
-
-
 }
 
 graf::~graf()
@@ -37,7 +39,7 @@ void graf::on_pushButton_clicked()
 
 void graf::TimerSlot()
 {
-        if (indexx1==0){
+        if (indexChooseGraf==0){
             float a = ui->lineEdit->text().toFloat();
             float b = ui->lineEdit_2->text().toFloat();
             float p = ui->lineEdit_3->text().toFloat();
@@ -57,7 +59,7 @@ void graf::TimerSlot()
                 timer->stop();
             }
         }
-        else if (indexx1==1){
+        else if (indexChooseGraf==1){
             float a = ui->lineEdit->text().toFloat();
             float b = ui->lineEdit_2->text().toFloat();
             if(time <= 20*N){
@@ -84,6 +86,7 @@ void graf::TimerSlot()
 
 void graf::on_comboBox_activated(int index)
 {
+    indexChooseGraf = index;
     if(index==0){
         ui->lineEdit->show();
         ui->lineEdit->show();
@@ -96,8 +99,6 @@ void graf::on_comboBox_activated(int index)
         ui->label->show();
         ui->label_2->show();
         ui->label_3->show();
-        indexx1=0;
-
        }
     if(index==1){
         ui->lineEdit->setText("");
@@ -109,14 +110,11 @@ void graf::on_comboBox_activated(int index)
         ui->label->show();
         ui->label_2->show();
         ui->label_3->hide();
-        indexx1=1;
-
     }
 }
 
 void graf::on_pushButton_2_clicked()
 {
-
     this->close();
     emit grafWindow();
 }
