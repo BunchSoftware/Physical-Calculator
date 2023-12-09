@@ -2,36 +2,30 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "fisic.h"
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+  class MainWindow;
+}
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+  explicit MainWindow(QWidget *parent = nullptr);
+  ~MainWindow();
 
 private slots:
-    void digits_numbers();
-    void on_pushButton_dot_clicked();
-    void operations();
-    void math_operations();
+  void on_tabWidget_tabCloseRequested(int index);
 
-    void on_pushButton_ravn_clicked();
+  void on_calculate_triggered();
 
-    void on_pushButton_C_clicked();
+  void on_physical_calculate_triggered();
 
-    void on_pushButton_fisic_cal_clicked();
-
-    void on_pushButton_C_2_clicked();
+  void on_plotting_triggered();
 
 private:
-    Ui::MainWindow *ui;
-    fisic *window;
+  Ui::MainWindow *ui;
 };
+
 #endif // MAINWINDOW_H

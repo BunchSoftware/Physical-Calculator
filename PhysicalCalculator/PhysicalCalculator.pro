@@ -9,25 +9,28 @@ CONFIG += c++17
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    dialog.cpp \
-    fisic.cpp \
-    graf.cpp \
+    CalculateForm.cpp \
+    ErrorForm.cpp \
+    MainWindow.cpp \
+    PhysicalCalculateForm.cpp \
+    PlottingForm.cpp \
     main.cpp \
-    mainwindow.cpp \
     qcustomplot.cpp
 
 HEADERS += \
-    dialog.h \
-    fisic.h \
-    graf.h \
-    mainwindow.h \
+    CalculateForm.h \
+    ErrorForm.h \
+    MainWindow.h \
+    PhysicalCalculateForm.h \
+    PlottingForm.h \
     qcustomplot.h
 
 FORMS += \
-    dialog.ui \
-    fisic.ui \
-    graf.ui \
-    mainwindow.ui
+    CalculateForm.ui \
+    ErrorForm.ui \
+    MainWindow.ui \
+    PhysicalCalculateForm.ui \
+    PlottingForm.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -36,3 +39,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     pictures.qrc
+
+DISTFILES += \
+    C:/Users/Den4o/Downloads/Telegram Desktop/Combinear.qss \
+    picters/close-button-black.png

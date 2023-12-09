@@ -32,7 +32,7 @@ public:
     QVBoxLayout *verticalLayout;
     QRadioButton *radioButton_2;
     QRadioButton *radioButton;
-    QLabel *label_6;
+    QLabel *DescriptionImage;
     QPushButton *pushButton_2;
     QLabel *Description;
     QWidget *LabelEditGroup;
@@ -122,14 +122,14 @@ public:
 
         verticalLayout->addWidget(radioButton);
 
-        label_6 = new QLabel(centralwidget);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(310, 40, 421, 301));
-        label_6->setText(QString::fromUtf8(""));
-        label_6->setTextFormat(Qt::AutoText);
-        label_6->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/\320\272\320\260\321\200\321\202\320\270\320\275\320\272\320\270/otnosilmas.png")));
-        label_6->setScaledContents(true);
-        label_6->setWordWrap(false);
+        DescriptionImage = new QLabel(centralwidget);
+        DescriptionImage->setObjectName(QString::fromUtf8("DescriptionImage"));
+        DescriptionImage->setGeometry(QRect(310, 40, 421, 301));
+        DescriptionImage->setText(QString::fromUtf8(""));
+        DescriptionImage->setTextFormat(Qt::AutoText);
+        DescriptionImage->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/\320\272\320\260\321\200\321\202\320\270\320\275\320\272\320\270/otnosilmas.png")));
+        DescriptionImage->setScaledContents(true);
+        DescriptionImage->setWordWrap(false);
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(130, 340, 111, 41));
@@ -152,14 +152,14 @@ public:
         Description->setFont(font1);
         LabelEditGroup = new QWidget(centralwidget);
         LabelEditGroup->setObjectName(QString::fromUtf8("LabelEditGroup"));
-        LabelEditGroup->setGeometry(QRect(120, 72, 121, 231));
+        LabelEditGroup->setGeometry(QRect(120, 72, 141, 231));
         label_2 = new QLabel(LabelEditGroup);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(10, 40, 101, 31));
+        label_2->setGeometry(QRect(10, 40, 131, 31));
         label = new QLabel(LabelEditGroup);
         label->setObjectName(QString::fromUtf8("label"));
         label->setEnabled(true);
-        label->setGeometry(QRect(10, -9, 101, 31));
+        label->setGeometry(QRect(10, -9, 131, 31));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -167,13 +167,13 @@ public:
         label->setSizePolicy(sizePolicy);
         label_3 = new QLabel(LabelEditGroup);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(10, 95, 101, 31));
+        label_3->setGeometry(QRect(10, 95, 131, 31));
         label_4 = new QLabel(LabelEditGroup);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(10, 145, 101, 31));
+        label_4->setGeometry(QRect(10, 145, 131, 31));
         label_5 = new QLabel(LabelEditGroup);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(10, 195, 101, 31));
+        label_5->setGeometry(QRect(10, 195, 131, 31));
         sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
         label_5->setSizePolicy(sizePolicy);
         EditGroup = new QWidget(centralwidget);
