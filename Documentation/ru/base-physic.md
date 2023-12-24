@@ -146,7 +146,7 @@
   - M – молярная масса растворенного вещества  []
   - V – объем рествора []
 ![Logotype](../images/molecular_concentration.png)
-## Скорость распространения волн
+## Скорость распространения волны
 Расстояние, на которое распространяется волна в еденицу времени 
 - V = λ/T
   - λ - длина волны []
@@ -163,7 +163,7 @@
 ![Logotype](../images/force_gravity.png)
 ## Количество предлагаемой теплоты
 ![Logotype](../images/amount_heat_released.png)
-## Плавления тела
+## Плавление тела
 ![Logotype](../images/body_melting.png)
 ## Теплота парообразования
 ![Logotype](../images/heat_vaporization.png)

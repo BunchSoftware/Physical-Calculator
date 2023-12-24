@@ -3,6 +3,9 @@
 
 #include "PlottingForm.h"
 #include <QMainWindow>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QJsonArray>
 namespace Ui {
 class PhysicalCalculateForm;
 }
@@ -28,7 +31,7 @@ private slots:
     void on_radioButton_clicked();
 
     void Calclulate();
-    void UpdateLableAndLineInWindow(QString textLabel1, QString textLabel2, QString textLabel3, QString textLabel4, QString textLabel5);
+    void UpdateLableAndLineInWindow(QJsonArray arrayData);
     void UpdateDescription(QPixmap image, QString textLabel);
     void UpdateLineEdit(QString textLineEdit1, QString textLineEdit2, QString textLineEdit3, QString textLineEdit4, QString textLabel5);
     void Error();

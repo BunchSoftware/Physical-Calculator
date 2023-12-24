@@ -6,6 +6,10 @@
 #include "ErrorForm.h"
 #include "CalculateForm.h"
 #include <QLineEdit>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QFile>
 int indexChoose;
 
 PhysicalCalculateForm::PhysicalCalculateForm(QWidget *parent) :
@@ -16,15 +20,8 @@ PhysicalCalculateForm::PhysicalCalculateForm(QWidget *parent) :
     setWindowIcon(QIcon(":/picters/icon-calculator.png"));
 
     ui->setupUi(this);
-
-    UpdateLableAndLineInWindow("","","","","");
-    UpdateDescription(QPixmap(), "");
-
-    ui->pushButton->hide();
-    ui->radioButton->hide();
-    ui->radioButton_2->hide();
-
     on_comboBox_activated(0);
+
 }
 double logbase(double a, double base)
 {
@@ -69,143 +66,22 @@ void PhysicalCalculateForm::on_comboBox_activated(int index)
     ui->radioButton->hide();
     ui->radioButton_2->hide();
 
-    UpdateLableAndLineInWindow("","","","","");
-    UpdateDescription(QPixmap(), "");
-
     indexChoose = index;
 
-    if (index==0){
-        UpdateLableAndLineInWindow("F","m","a","","");
-        UpdateDescription(QPixmap("://picters/zaconNut.png"), "Второй закон Нью́то́на — дифференциальный закон механического \nдвижения, описывающий зависимость ускорения тела от \nравнодействующей всех приложенных к телу сил и массы тела.\nОдин из трёх законов Ньютона. Основной закон динамики.\n            F=ma\nF-  сумма всех сил приложенных к телу, Н.\nm-  масса тела, кг.\na – ускорение тела, 〖м/с〗^2.");
-    }
-    if(index==1){
-        UpdateLableAndLineInWindow("p","q","V","F","");
-        UpdateDescription(QPixmap("://picters/zaconArxim.png"), "Закон Архимеда — закон гидростатики и аэростатики: на тело,\nпогружённое в жидкость или газ, действует выталкивающая сила, \nчисленно равная весу объема жидкости или газа, вытесненного телом.\n             F_a= ρgV\nF_a – сила Архимеда, [Н]. \nρ- плотность жидкости или газа, [ 〖кг/м〗^2].\ng – ускорение свободного падения, [ м/с^2].\nV- объем части тела, погруженной в жидкость или газ, [ м^3]. ");
-    }if(index==2){
-        UpdateLableAndLineInWindow("Порядок спектра","Лямбда","Разность хода","","");
-        UpdateDescription(QPixmap(), "");
-        on_radioButton_2_clicked();
-        ui->radioButton->show();
-        ui->radioButton_2->show();
-        ui->radioButton_2->toggle();
-    }if(index==3){
-        UpdateLableAndLineInWindow("U","R","I","","");
-        UpdateDescription(QPixmap("://picters/zaconOma.png"), "Сила тока в проводнике прямо пропорциональна напряжению на \nконцах проводника\n           R=  U/I\nR - сопротивление\nU - напряжение\nI – сила тока");
-        //QPixmap pix(":/new/prefix1/картинки/silatoka.png");
-    }if(index==4){
-        UpdateLableAndLineInWindow("E","m","","","");
-        UpdateDescription(QPixmap("://picters/otnosilmas.png"), "Увеличение массы при увеличении скорости относительно массы \nтела в покое\n               E_0=〖mc〗^2 \nE_0 - энергия\nm - масса\nc - скорость света");
-    }
-    if(index==5){
-        UpdateLableAndLineInWindow("Fam","B","I","l","a");
-        UpdateDescription(QPixmap("://picters/silaAmpera.png"), "Это сила, с которой магнитное поле действует на помещенный в него\nпроводник с током.\n            F=B*I*L*sin ⁡a\nB – магнитное поле\nI – сила тока\nL –длин fпроводника\nsin a – угол падения на магнитное поле");
-    }
-    if(index==6){
-        UpdateLableAndLineInWindow("Ek","m","v","","");
-        UpdateDescription(QPixmap("://picters/kinenergia.png"), "Физическая величина, характеризующая состояние тела или системы \nтел по их движению \n              E=  〖mV〗^2/2 \nE – кинетическая энергия \nm – масса тела \nV – скорость тела ");
-    }
-    if(index==7){
-        UpdateLableAndLineInWindow("Заряд 1 тела","Заряд 2 тела","Расстояние между\nтелами","Сила Кулона * 9*10^9","");
-        UpdateDescription(QPixmap("://picters/zas.png"), "Величина электрической силы между двумя точечными зарядами в \nвакууме прямо пропорциональна произведению модулей зарядов и\nобратно пропорциональна квадрату расстояния между ними.\nF=k  (q1*q2)/r^2 \nF – сила Кулона \nk -  коэффициент пропорциональности\nq1, q2 - взаимодействующие тела\nr - расстояние между телами");
-    }
-    if (index==8){
-        UpdateLableAndLineInWindow("Угол","Индуктивность (B)","Скорость (v)","Заряд (q)","Сила (F)");
-        UpdateDescription(QPixmap("://picters/silalorans.png"), "Сила, с которой магнитное поле действует на заряженную частицу, \nдвижущуюся в этом поле\n          F=q(E +VB)\nq - заряд частицы\nE - напряженность электрического поля\nV - скорость частицы\nB - магнитная индукция");
-    }
-    if(index==9){
-        UpdateLableAndLineInWindow("Частота (V)","Период (Т)","","","");
-        UpdateDescription(QPixmap("://picters/chast.png"), "Частота колебаний — число полных колебаний тела за одну секунду \n               v=  1/T \nv – частота колебаний \nT – период колебаний ");
-    }
-    if(index==10){
-        UpdateLableAndLineInWindow("Индуктивность контура","Емкость контура","Колебания в контуре","","");
-        UpdateDescription(QPixmap("://picters/zacontomsa.png"), "Формула Томсона — математическое выражение связывающее \nсобственную частоту, индуктивность и ёмкость электрических или \nэлектромагнитных колебаний в электрическом колебательном контуре\n       T₀ = 1/f₀ = 2π√LC = 2π/w₀ = 2π/(1/√LC) = 2π √LC\nf₀ - частота собственных колебаний\nw₀ - угловая частота собственных колебаний\nL – индуктивность\nС – ёмкость");
-    }
-    if(index==11){
-        UpdateLableAndLineInWindow("m","k","T","","");
-        UpdateDescription(QPixmap("://picters/mazt.png"), "Период колебания пружинного маятника – зависит от жесткости \nпружины: с увеличением коэффициента жесткости пружины период \nколебания маятника уменьшается\n               T=2*pi*sqrt(m/k)\n               T=2 * √(m*k)\nT – период колебания пружинного маятника\n - постоянная\nm – масса груза\nk – жесткость пружины");
-    }
-    if(index==12){
-        UpdateLableAndLineInWindow("t","h","","","");
-        UpdateDescription(QPixmap("://picters/serrr.png"), "");
-    }
-    if(index==13){
-        UpdateLableAndLineInWindow("t","v","","","");
-        UpdateDescription(QPixmap("://picters/serrr.png"), "");
-    }
-    if(index==14){
-        UpdateLableAndLineInWindow("N","No","t","T","");
-        UpdateDescription(QPixmap("://picters/period.png"), "Время в течении которого количество частиц  и интенсивность \nреакции распада уменьшаются в двое\n             N=N0×(1/2)^t/T\nN0- исходное кол-во вещества \nt- время прошедшее с начала распада \nT- период полураспада ");
-    }
-    //Длина волны
-    if (index==15)
+    QFile file(":/source.json");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QString jsonValue = file.readAll();
+
+    QJsonDocument doc = QJsonDocument::fromJson(jsonValue.toUtf8());
+    QJsonObject json = doc.object();
+    QJsonArray jsonArray = json["arrayData"].toArray();
+
+    if(index <= jsonArray.count())
     {
-        UpdateLableAndLineInWindow("T ="," u =","lam =","","");
-        UpdateDescription(QPixmap("://picters/dlinavoln.png"), "Длина волны, которая проявляется у всех частиц в квантовой \nмеханике согласно корпускулярно-волновому дуализму, и \nопределяющая плотность вероятности обнаружения объекта в \nзаданной точке конфигурационного пространства. Длина волны де \nБройля обратно пропорциональна импульсу частицы\n                   λ= h/p\n λ – длина волны\nh - постоянная планка\np – конечный импульс");
-    }
-    //Средняя скорость и ускорение тела
-    if (index==16)
-    {
-        UpdateLableAndLineInWindow("S =","t =","v =","","");
-        UpdateDescription(QPixmap("://picters/serp.png"), "Отношениее растояние, пройденного тола и времени, затраченого на путь\n            v=S/t\nv-скорость\nS-растояние\nT-время");
-    }
-    //Абсолютная температура
-    if (index==17)
-    {
-        UpdateLableAndLineInWindow("t =","T =","","","");
-        UpdateDescription(QPixmap("://picters/abs.png"), "Это температура измеряеемая в кельвинах\n         T=t+T0\nt-температура в С\nT0=273К");
-    }
-    //Кол-во вещества
-    if (index==18)
-    {
-        UpdateLableAndLineInWindow("m =","M =","v =","","");
-        UpdateDescription(QPixmap("://picters/kolpp.png"), "Кол-во однотипных структурных едениц содержащихся в веществе \n        v=m/M\nm-масса веществ\nM-молярная масса ");
-    }
-    //Концентрация молекул(атомов)
-    if (index==19)
-    {
-        UpdateLableAndLineInWindow("N =","V =","n =","","");
-        UpdateDescription(QPixmap("://picters/kolvesch.png"), "величина, количественно характеризующая содержание компонента \nотносительно всей смеси.\n                       Cм=  m/(M*V)\nCм –молярная концентрация\nm – масса растворенного в растворе вещества\nM – молярная масса растворенного вещества \nV – объем рествора");
-    }
-    if (index==20)
-    {
-        UpdateLableAndLineInWindow("λ =","V =","T =","","");
-        UpdateDescription(QPixmap("://picters/rasprot.png"), "Расстояние, на которое распространяется волна в еденицу времени\n                    V = λ/T\nλ - длина волны\nT - период колебаний\nV - скорость ее распространения ");
-    }
-    if(index==21){
-        UpdateLableAndLineInWindow("Начальная координата","Время падения","","","");
-        UpdateDescription(QPixmap("://picters/kord.png"), "");
-    }
-    if(index==22){
-        UpdateLableAndLineInWindow("Расстояние","Начальная скорость","Время","","");
-        UpdateDescription(QPixmap("://picters/dalnost.png"), "");
-    }
-    if(index==23){
-        UpdateLableAndLineInWindow("Потенциальная энергия","Масса","Высота","","");
-        UpdateDescription(QPixmap("://picters/dal.png"), "");
-    }
-    if(index==24){
-        UpdateLableAndLineInWindow("Сила тяжести","Масса","","","");
-        UpdateDescription(QPixmap("://picters/silataz.png"), "");
-    }
-    if(index==25){
-        UpdateLableAndLineInWindow("Количество теплоты","Теплоемкость","Начальная температура","Конечная температура","");
-        UpdateDescription(QPixmap("://picters/koll.png"), "");
-    }
-    if(index==26){
-        UpdateLableAndLineInWindow("Количество теплоты","Удельная теплота плавления","Масса","","");
-        UpdateDescription(QPixmap("://picters/plsav.png"), "");
-    }
-    if(index==27){
-        UpdateLableAndLineInWindow("Количество теплоты","Удельная теп. парооб.","Масса","","");
-        UpdateDescription(QPixmap("://picters/par.png"), "");
-    }
-    if(index==28){
-        UpdateLableAndLineInWindow("Количество теплоты","Удельная теп. сгорания","Масса","","");
-        UpdateDescription(QPixmap("://picters/topliv.png"), "физико-химический процесс перехлда из исходного  вещества в \nпродукты сгорания сопровождающийся интенивным выделением \nтепла \n                              Q = q*m\nq - удельная теплота сгорания \nm - масса вещества  ");
-    }
-    if(index==29){
-        UpdateLableAndLineInWindow("Сопротивление","Удельное сопротивление","Длина проводника","Площадь попереч. сеч.","");
-        UpdateDescription(QPixmap("://picters/opp.png"), "");
+        QJsonObject object = jsonArray[index].toObject();
+        UpdateDescription(QPixmap(object["path"].toString()), object["description"].toString());
+        UpdateLableAndLineInWindow(object["symbolFormul"].toArray());
+        QJsonArray jsonArray1 = object["symbolFormul"].toArray();
     }
 }
 
@@ -451,69 +327,57 @@ void PhysicalCalculateForm::Calclulate()
         CheckLineEditIsEmpty(FromFloatToString((p*l)/s), FromFloatToString((r*s)/l),FromFloatToString((r*s)/p),FromFloatToString((p*l)/r),"");
     }
 }
-void PhysicalCalculateForm::UpdateLableAndLineInWindow(QString textLabel1, QString textLabel2, QString textLabel3, QString textLabel4, QString textLabel5){
-    if(textLabel1.isEmpty()){
-     ui->lineEdit->hide();
-     ui->label->hide();
+void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
+  for (int i = 0; i < arrayData.count();i++) {
+      if(arrayData[i].toString() == ""){
+          if(ui->LabelEditGroup->children()[i]->metaObject()->className() == QString("QLabel")){
+              QLabel *label = qobject_cast<QLabel*>(ui->LabelEditGroup->children()[i]);
+              Q_ASSERT( label != nullptr );
+              label->setText("");
+              label->hide();
+              if(ui->EditGroup->children()[i]->metaObject()->className() == QString("QLineEdit")){
+                  QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->EditGroup->children()[i]);
+                  Q_ASSERT(lineEdit != nullptr );
+                  lineEdit->hide();
+              }
+              arrayData[i].toString().arg("");
+          }
+        }
+      else
+        {
+          if(ui->LabelEditGroup->children()[i]->metaObject()->className() == QString("QLabel")){
+              QLabel *label = qobject_cast<QLabel*>(ui->LabelEditGroup->children()[i]);
+              Q_ASSERT( label != nullptr );
+
+              label->setText(arrayData[i].toString());
+              label->show();
+
+              if(ui->EditGroup->children()[i]->metaObject()->className() == QString("QLineEdit")){
+                  QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->EditGroup->children()[i]);
+                  Q_ASSERT(lineEdit != nullptr );
+                  lineEdit->show();
+              }
+              arrayData[i].toString().arg("");
+          }
+        }
     }
-    else{
-    ui->label->show();
-    ui->label->setText(textLabel1);
-    ui->lineEdit->show();
+  }
+  void PhysicalCalculateForm::UpdateDescription(QPixmap image, QString textLabel){
+      if(image.isNull()){
+        ui->DescriptionImage->hide();
+      }
+      else{
+        ui->DescriptionImage->show();
+        ui->DescriptionImage->setPixmap(image);
+      }
+      if(textLabel.isEmpty()){
+          ui->Description->hide();
+      }
+      else{
+        ui->Description->setText(textLabel);
+        ui->Description->show();
+      }
     }
-    if(textLabel2.isEmpty()){
-    ui->lineEdit_2->hide();
-     ui->label_2->hide();
-    }
-else{
-ui->label_2->show();
-    ui->label_2->setText(textLabel2);
-ui->lineEdit_2->show();
-}
-    if(textLabel3.isEmpty()){
-    ui->lineEdit_3->hide();
-    ui->label_3->hide();
-    }
-else{
-ui->label_3->show();
-    ui->label_3->setText(textLabel3);
-ui->lineEdit_3->show();
-}
-    if(textLabel4.isEmpty()){
-    ui->lineEdit_4->hide();
-    ui->label_4->hide();
-    }
-else{
-ui->label_4->show();
-    ui->label_4->setText(textLabel4);
-ui->lineEdit_4->show();
-}
-    if(textLabel5.isEmpty()){
-    ui->lineEdit_5->hide();
-    ui->label_5->hide();
-    }
-else{
-ui->label_5->show();
-    ui->label_5->setText(textLabel5);
-ui->lineEdit_5->show();
-}
-}
-void PhysicalCalculateForm::UpdateDescription(QPixmap image, QString textLabel){
-    if(image.isNull()){
-      ui->DescriptionImage->hide();
-    }
-    else{
-      ui->DescriptionImage->show();      
-      ui->DescriptionImage->setPixmap(image);
-    }
-    if(textLabel.isEmpty()){
-        ui->Description->hide();
-    }
-    else{
-      ui->Description->setText(textLabel);
-      ui->Description->show();
-    }
-}
 void PhysicalCalculateForm::UpdateLineEdit(QString textLineEdit1, QString textLineEdit2, QString textLineEdit3, QString textLineEdit4, QString textLineEdit5){
     if (ui->lineEdit->text().isEmpty()) {
         ui->lineEdit->setText(textLineEdit1);

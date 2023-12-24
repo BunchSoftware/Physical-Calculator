@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_PhysicalCalculateForm_t {
-    QByteArrayData data[32];
-    char stringdata0[423];
+    QByteArrayData data[29];
+    char stringdata0[389];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,39 +42,35 @@ QT_MOC_LITERAL(6, 97, 24), // "on_radioButton_2_clicked"
 QT_MOC_LITERAL(7, 122, 22), // "on_radioButton_clicked"
 QT_MOC_LITERAL(8, 145, 10), // "Calclulate"
 QT_MOC_LITERAL(9, 156, 26), // "UpdateLableAndLineInWindow"
-QT_MOC_LITERAL(10, 183, 10), // "textLabel1"
-QT_MOC_LITERAL(11, 194, 10), // "textLabel2"
-QT_MOC_LITERAL(12, 205, 10), // "textLabel3"
-QT_MOC_LITERAL(13, 216, 10), // "textLabel4"
-QT_MOC_LITERAL(14, 227, 10), // "textLabel5"
-QT_MOC_LITERAL(15, 238, 17), // "UpdateDescription"
-QT_MOC_LITERAL(16, 256, 5), // "image"
-QT_MOC_LITERAL(17, 262, 9), // "textLabel"
-QT_MOC_LITERAL(18, 272, 14), // "UpdateLineEdit"
-QT_MOC_LITERAL(19, 287, 13), // "textLineEdit1"
-QT_MOC_LITERAL(20, 301, 13), // "textLineEdit2"
-QT_MOC_LITERAL(21, 315, 13), // "textLineEdit3"
-QT_MOC_LITERAL(22, 329, 13), // "textLineEdit4"
-QT_MOC_LITERAL(23, 343, 5), // "Error"
-QT_MOC_LITERAL(24, 349, 17), // "FromFloatToString"
-QT_MOC_LITERAL(25, 367, 5), // "value"
-QT_MOC_LITERAL(26, 373, 20), // "CheckLineEditIsEmpty"
-QT_MOC_LITERAL(27, 394, 4), // "text"
-QT_MOC_LITERAL(28, 399, 5), // "text2"
-QT_MOC_LITERAL(29, 405, 5), // "text3"
-QT_MOC_LITERAL(30, 411, 5), // "text4"
-QT_MOC_LITERAL(31, 417, 5) // "text5"
+QT_MOC_LITERAL(10, 183, 9), // "arrayData"
+QT_MOC_LITERAL(11, 193, 17), // "UpdateDescription"
+QT_MOC_LITERAL(12, 211, 5), // "image"
+QT_MOC_LITERAL(13, 217, 9), // "textLabel"
+QT_MOC_LITERAL(14, 227, 14), // "UpdateLineEdit"
+QT_MOC_LITERAL(15, 242, 13), // "textLineEdit1"
+QT_MOC_LITERAL(16, 256, 13), // "textLineEdit2"
+QT_MOC_LITERAL(17, 270, 13), // "textLineEdit3"
+QT_MOC_LITERAL(18, 284, 13), // "textLineEdit4"
+QT_MOC_LITERAL(19, 298, 10), // "textLabel5"
+QT_MOC_LITERAL(20, 309, 5), // "Error"
+QT_MOC_LITERAL(21, 315, 17), // "FromFloatToString"
+QT_MOC_LITERAL(22, 333, 5), // "value"
+QT_MOC_LITERAL(23, 339, 20), // "CheckLineEditIsEmpty"
+QT_MOC_LITERAL(24, 360, 4), // "text"
+QT_MOC_LITERAL(25, 365, 5), // "text2"
+QT_MOC_LITERAL(26, 371, 5), // "text3"
+QT_MOC_LITERAL(27, 377, 5), // "text4"
+QT_MOC_LITERAL(28, 383, 5) // "text5"
 
     },
     "PhysicalCalculateForm\0PhysicalCalculateWindow\0"
     "\0on_pushButton_clicked\0on_comboBox_activated\0"
     "index\0on_radioButton_2_clicked\0"
     "on_radioButton_clicked\0Calclulate\0"
-    "UpdateLableAndLineInWindow\0textLabel1\0"
-    "textLabel2\0textLabel3\0textLabel4\0"
-    "textLabel5\0UpdateDescription\0image\0"
-    "textLabel\0UpdateLineEdit\0textLineEdit1\0"
-    "textLineEdit2\0textLineEdit3\0textLineEdit4\0"
+    "UpdateLableAndLineInWindow\0arrayData\0"
+    "UpdateDescription\0image\0textLabel\0"
+    "UpdateLineEdit\0textLineEdit1\0textLineEdit2\0"
+    "textLineEdit3\0textLineEdit4\0textLabel5\0"
     "Error\0FromFloatToString\0value\0"
     "CheckLineEditIsEmpty\0text\0text2\0text3\0"
     "text4\0text5"
@@ -103,12 +99,12 @@ static const uint qt_meta_data_PhysicalCalculateForm[] = {
        6,    0,   79,    2, 0x08 /* Private */,
        7,    0,   80,    2, 0x08 /* Private */,
        8,    0,   81,    2, 0x08 /* Private */,
-       9,    5,   82,    2, 0x08 /* Private */,
-      15,    2,   93,    2, 0x08 /* Private */,
-      18,    5,   98,    2, 0x08 /* Private */,
-      23,    0,  109,    2, 0x08 /* Private */,
-      24,    1,  110,    2, 0x08 /* Private */,
-      26,    5,  113,    2, 0x08 /* Private */,
+       9,    1,   82,    2, 0x08 /* Private */,
+      11,    2,   85,    2, 0x08 /* Private */,
+      14,    5,   90,    2, 0x08 /* Private */,
+      20,    0,  101,    2, 0x08 /* Private */,
+      21,    1,  102,    2, 0x08 /* Private */,
+      23,    5,  105,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -119,12 +115,12 @@ static const uint qt_meta_data_PhysicalCalculateForm[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   10,   11,   12,   13,   14,
-    QMetaType::Void, QMetaType::QPixmap, QMetaType::QString,   16,   17,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   19,   20,   21,   22,   14,
+    QMetaType::Void, QMetaType::QJsonArray,   10,
+    QMetaType::Void, QMetaType::QPixmap, QMetaType::QString,   12,   13,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   15,   16,   17,   18,   19,
     QMetaType::Void,
-    QMetaType::QString, QMetaType::Float,   25,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   27,   28,   29,   30,   31,
+    QMetaType::QString, QMetaType::Float,   22,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   24,   25,   26,   27,   28,
 
        0        // eod
 };
@@ -141,7 +137,7 @@ void PhysicalCalculateForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 3: _t->on_radioButton_2_clicked(); break;
         case 4: _t->on_radioButton_clicked(); break;
         case 5: _t->Calclulate(); break;
-        case 6: _t->UpdateLableAndLineInWindow((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5]))); break;
+        case 6: _t->UpdateLableAndLineInWindow((*reinterpret_cast< QJsonArray(*)>(_a[1]))); break;
         case 7: _t->UpdateDescription((*reinterpret_cast< QPixmap(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 8: _t->UpdateLineEdit((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5]))); break;
         case 9: _t->Error(); break;
