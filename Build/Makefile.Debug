@@ -78,9 +78,7 @@ OBJECTS       = debug/CalculateForm.o \
 		debug/moc_PlottingForm.o \
 		debug/moc_qcustomplot.o
 
-DIST          = C:/Users/Den4o/Downloads/Telegram \
-		Desktop/Combinear.qss \
-		picters/close-button-black.png ..\PhysicalCalculator\CalculateForm.h \
+DIST          =  ..\PhysicalCalculator\CalculateForm.h \
 		..\PhysicalCalculator\ErrorForm.h \
 		..\PhysicalCalculator\MainWindow.h \
 		..\PhysicalCalculator\PhysicalCalculateForm.h \
@@ -137,48 +135,45 @@ compiler_rcc_clean:
 debug/qrc_pictures.cpp: ../PhysicalCalculator/pictures.qrc \
 		../../../../Qt/5.14.2/mingw73_64/bin/rcc.exe \
 		../PhysicalCalculator/Combinear.qss \
-		C:/Users/Den4o/Downloads/Telegram\ Desktop/Combinear.qss \
-		../PhysicalCalculator/picters/icon-menu.png \
-		../PhysicalCalculator/picters/abs.png \
-		../PhysicalCalculator/picters/kolpp.png \
-		../PhysicalCalculator/picters/Close.png \
-		../PhysicalCalculator/picters/kord.png \
-		../PhysicalCalculator/picters/plsav.png \
-		../PhysicalCalculator/picters/maxinter.png \
-		../PhysicalCalculator/picters/zaconArxim.png \
-		../PhysicalCalculator/picters/zacontomsa.png \
-		../PhysicalCalculator/picters/mininter.png \
-		../PhysicalCalculator/picters/close-button-black.png \
-		../PhysicalCalculator/picters/mazt.png \
-		../PhysicalCalculator/picters/dal.png \
-		../PhysicalCalculator/picters/otnosilmas.png \
-		../PhysicalCalculator/picters/silataz.png \
-		../PhysicalCalculator/picters/icon-calculator.png \
-		../PhysicalCalculator/picters/kolvesch.png \
-		../PhysicalCalculator/picters/Maximize.png \
-		../PhysicalCalculator/picters/rasprot.png \
-		../PhysicalCalculator/picters/kinenergia.png \
-		../PhysicalCalculator/picters/rasprost.png \
-		../PhysicalCalculator/picters/zaconOma.png \
-		../PhysicalCalculator/picters/silatazpng.png \
-		../PhysicalCalculator/picters/Minimize.png \
-		../PhysicalCalculator/picters/dlinavoln.png \
-		../PhysicalCalculator/picters/serrr.png \
-		../PhysicalCalculator/picters/period.png \
-		../PhysicalCalculator/picters/dalnost.png \
-		../PhysicalCalculator/picters/koll.png \
-		../PhysicalCalculator/picters/chast.png \
-		../PhysicalCalculator/picters/zas.png \
-		../PhysicalCalculator/picters/serp.png \
-		../PhysicalCalculator/picters/icon-settings.png \
-		../PhysicalCalculator/picters/icon-back-arrow.png \
-		../PhysicalCalculator/picters/par.png \
-		../PhysicalCalculator/picters/silaAmpera.png \
-		../PhysicalCalculator/picters/opp.png \
-		../PhysicalCalculator/picters/silalorans.png \
-		../PhysicalCalculator/picters/silatoka.png \
-		../PhysicalCalculator/picters/topliv.png \
-		../PhysicalCalculator/picters/zaconNut.png
+		../PhysicalCalculator/source.json \
+		../PhysicalCalculator/images/icon-back-arrow.png \
+		../PhysicalCalculator/images/potential_energy.png \
+		../PhysicalCalculator/images/archimedes_law.png \
+		../PhysicalCalculator/images/half_life.png \
+		../PhysicalCalculator/images/ampere_power.png \
+		../PhysicalCalculator/images/silatoka.png \
+		../PhysicalCalculator/images/coordinate_time.png \
+		../PhysicalCalculator/images/average_speed.png \
+		../PhysicalCalculator/images/heat_vaporization.png \
+		../PhysicalCalculator/images/ohm_law.png \
+		../PhysicalCalculator/images/Close.png \
+		../PhysicalCalculator/images/icon-settings.png \
+		../PhysicalCalculator/images/body_melting.png \
+		../PhysicalCalculator/images/icon-calculator.png \
+		../PhysicalCalculator/images/lorentz_force.png \
+		../PhysicalCalculator/images/amount_substance.png \
+		../PhysicalCalculator/images/oscillation_frequency.png \
+		../PhysicalCalculator/images/wavelength.png \
+		../PhysicalCalculator/images/force_gravity.png \
+		../PhysicalCalculator/images/free_path.png \
+		../PhysicalCalculator/images/kinetic_energy.png \
+		../PhysicalCalculator/images/thomson_law.png \
+		../PhysicalCalculator/images/interference_max.png \
+		../PhysicalCalculator/images/fuel_combustion.png \
+		../PhysicalCalculator/images/conductor_resistivity.png \
+		../PhysicalCalculator/images/absolute_temperature.png \
+		../PhysicalCalculator/images/horizontal_flight_range.png \
+		../PhysicalCalculator/images/newton_second_law.png \
+		../PhysicalCalculator/images/speed_light.png \
+		../PhysicalCalculator/images/molecular_concentration.png \
+		../PhysicalCalculator/images/amount_heat_released.png \
+		../PhysicalCalculator/images/close-button-black.png \
+		../PhysicalCalculator/images/spring_pendulum.png \
+		../PhysicalCalculator/images/icon-menu.png \
+		../PhysicalCalculator/images/coulomb_force.png \
+		../PhysicalCalculator/images/relativity_mass.png \
+		../PhysicalCalculator/images/interference_min.png \
+		C:/Users/Den4o/Downloads/Telegram\ Desktop/Combinear.qss
 	E:\Qt\5.14.2\mingw73_64\bin\rcc.exe -name pictures ..\PhysicalCalculator\pictures.qrc -o debug\qrc_pictures.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h

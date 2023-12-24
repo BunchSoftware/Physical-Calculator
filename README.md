@@ -7,7 +7,7 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/DSD-Games/Physical-Calculator)
 ![GitHub issues](https://img.shields.io/github/issues/DSD-Games/Physical-Calculator)
 
-![Logotype](Documentation/images/logo.png)
+![Logotype](Documentation/images/logotype.png)
 
 ## Установка проекта (Windows)
 У вас должны быть установлены [зависимости проекта](https://github.com/DSD-Games/Physical-Calculator#зависимости)

@@ -20,8 +20,6 @@ PhysicalCalculateForm::PhysicalCalculateForm(QWidget *parent) :
     UpdateLableAndLineInWindow("","","","","");
     UpdateDescription(QPixmap(), "");
 
-
-
     ui->pushButton->hide();
     ui->radioButton->hide();
     ui->radioButton_2->hide();
@@ -71,14 +69,8 @@ void PhysicalCalculateForm::on_comboBox_activated(int index)
     ui->radioButton->hide();
     ui->radioButton_2->hide();
 
-    ui->DescriptionImage->hide();
-    ui->Description->hide();
-
-    ui->lineEdit->setText("");
-    ui->lineEdit_2->setText("");
-    ui->lineEdit_3->setText("");
-    ui->lineEdit_4->setText("");
-    ui->lineEdit_5->setText("");
+    UpdateLableAndLineInWindow("","","","","");
+    UpdateDescription(QPixmap(), "");
 
     indexChoose = index;
 
@@ -148,7 +140,7 @@ void PhysicalCalculateForm::on_comboBox_activated(int index)
     if (index==15)
     {
         UpdateLableAndLineInWindow("T ="," u =","lam =","","");
-        UpdateDescription(QPixmap("://picters/dlinavoln.png"), "Д лина волны, которая проявляется у всех частиц в квантовой \nмеханике согласно корпускулярно-волновому дуализму, и \nопределяющая плотность вероятности обнаружения объекта в \nзаданной точке конфигурационного пространства. Длина волны де \nБройля обратно пропорциональна импульсу частицы\n                   λ= h/p\n λ – длина волны\nh - постоянная планка\np – конечный импульс");
+        UpdateDescription(QPixmap("://picters/dlinavoln.png"), "Длина волны, которая проявляется у всех частиц в квантовой \nмеханике согласно корпускулярно-волновому дуализму, и \nопределяющая плотность вероятности обнаружения объекта в \nзаданной точке конфигурационного пространства. Длина волны де \nБройля обратно пропорциональна импульсу частицы\n                   λ= h/p\n λ – длина волны\nh - постоянная планка\np – конечный импульс");
     }
     //Средняя скорость и ускорение тела
     if (index==16)
@@ -420,7 +412,7 @@ void PhysicalCalculateForm::Calclulate()
         float m = ui->lineEdit_2->text().toFloat();
         CheckLineEditIsEmpty(FromFloatToString(m*9.8), FromFloatToString(f/9.8),"","","");
     }
-    else if(indexChoose==57){
+    else if(indexChoose==25){
         float q = ui->lineEdit->text().toFloat();
         float c = ui->lineEdit_2->text().toFloat();
         float m = ui->lineEdit_3->text().toFloat();

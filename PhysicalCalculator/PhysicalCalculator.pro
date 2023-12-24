@@ -40,6 +40,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     pictures.qrc
 
-DISTFILES += \
-    C:/Users/Den4o/Downloads/Telegram Desktop/Combinear.qss \
-    picters/close-button-black.png
