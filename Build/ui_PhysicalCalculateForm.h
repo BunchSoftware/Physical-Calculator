@@ -31,6 +31,10 @@ class Ui_PhysicalCalculateForm
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
+    QFrame *DescriptionGroup_2;
+    QVBoxLayout *DescriptionGroup;
+    QLabel *DescriptionImage;
+    QLabel *Description;
     QFrame *Menu;
     QGridLayout *gridLayout_2;
     QFrame *EditPanel;
@@ -58,10 +62,7 @@ public:
     QVBoxLayout *verticalLayout;
     QRadioButton *radioButton_2;
     QRadioButton *radioButton;
-    QFrame *DescriptionGroup_2;
-    QVBoxLayout *DescriptionGroup;
-    QLabel *DescriptionImage;
-    QLabel *Description;
+    QSpacerItem *horizontalSpacer;
 
     void setupUi(QMainWindow *PhysicalCalculateForm)
     {
@@ -88,6 +89,50 @@ public:
         gridLayout->setHorizontalSpacing(50);
         gridLayout->setVerticalSpacing(0);
         gridLayout->setContentsMargins(50, 50, 50, 50);
+        DescriptionGroup_2 = new QFrame(centralwidget);
+        DescriptionGroup_2->setObjectName(QString::fromUtf8("DescriptionGroup_2"));
+        sizePolicy.setHeightForWidth(DescriptionGroup_2->sizePolicy().hasHeightForWidth());
+        DescriptionGroup_2->setSizePolicy(sizePolicy);
+        DescriptionGroup = new QVBoxLayout(DescriptionGroup_2);
+        DescriptionGroup->setSpacing(0);
+        DescriptionGroup->setObjectName(QString::fromUtf8("DescriptionGroup"));
+        DescriptionGroup->setSizeConstraint(QLayout::SetDefaultConstraint);
+        DescriptionGroup->setContentsMargins(30, 0, 0, 0);
+        DescriptionImage = new QLabel(DescriptionGroup_2);
+        DescriptionImage->setObjectName(QString::fromUtf8("DescriptionImage"));
+        sizePolicy.setHeightForWidth(DescriptionImage->sizePolicy().hasHeightForWidth());
+        DescriptionImage->setSizePolicy(sizePolicy);
+        DescriptionImage->setMinimumSize(QSize(0, 0));
+        DescriptionImage->setMaximumSize(QSize(1600, 1097));
+        QFont font1;
+        font1.setPointSize(10);
+        DescriptionImage->setFont(font1);
+        DescriptionImage->setPixmap(QPixmap(QString::fromUtf8(":/images/absolute_temperature.png")));
+        DescriptionImage->setScaledContents(true);
+        DescriptionImage->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        DescriptionImage->setMargin(10);
+
+        DescriptionGroup->addWidget(DescriptionImage);
+
+        Description = new QLabel(DescriptionGroup_2);
+        Description->setObjectName(QString::fromUtf8("Description"));
+        sizePolicy.setHeightForWidth(Description->sizePolicy().hasHeightForWidth());
+        Description->setSizePolicy(sizePolicy);
+        QFont font2;
+        font2.setPointSize(15);
+        font2.setKerning(true);
+        Description->setFont(font2);
+        Description->setStyleSheet(QString::fromUtf8(""));
+        Description->setTextFormat(Qt::AutoText);
+        Description->setScaledContents(true);
+        Description->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        Description->setWordWrap(true);
+
+        DescriptionGroup->addWidget(Description);
+
+
+        gridLayout->addWidget(DescriptionGroup_2, 0, 2, 1, 1);
+
         Menu = new QFrame(centralwidget);
         Menu->setObjectName(QString::fromUtf8("Menu"));
         sizePolicy.setHeightForWidth(Menu->sizePolicy().hasHeightForWidth());
@@ -164,7 +209,6 @@ public:
         verticalLayout_3->setContentsMargins(10, 10, 0, 0);
         label = new QLabel(LabelEditGroup);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setEnabled(true);
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy);
 
@@ -217,9 +261,9 @@ public:
         pushButton->setSizePolicy(sizePolicy1);
         pushButton->setMinimumSize(QSize(40, 60));
         pushButton->setSizeIncrement(QSize(0, 0));
-        QFont font1;
-        font1.setPointSize(15);
-        pushButton->setFont(font1);
+        QFont font3;
+        font3.setPointSize(15);
+        pushButton->setFont(font3);
         pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "\n"
 "  background-color:  #8330a6;\n"
@@ -314,46 +358,9 @@ public:
 
         gridLayout->addWidget(Menu, 0, 0, 1, 1);
 
-        DescriptionGroup_2 = new QFrame(centralwidget);
-        DescriptionGroup_2->setObjectName(QString::fromUtf8("DescriptionGroup_2"));
-        sizePolicy.setHeightForWidth(DescriptionGroup_2->sizePolicy().hasHeightForWidth());
-        DescriptionGroup_2->setSizePolicy(sizePolicy);
-        DescriptionGroup = new QVBoxLayout(DescriptionGroup_2);
-        DescriptionGroup->setSpacing(0);
-        DescriptionGroup->setObjectName(QString::fromUtf8("DescriptionGroup"));
-        DescriptionGroup->setSizeConstraint(QLayout::SetDefaultConstraint);
-        DescriptionGroup->setContentsMargins(30, 0, 0, 0);
-        DescriptionImage = new QLabel(DescriptionGroup_2);
-        DescriptionImage->setObjectName(QString::fromUtf8("DescriptionImage"));
-        sizePolicy.setHeightForWidth(DescriptionImage->sizePolicy().hasHeightForWidth());
-        DescriptionImage->setSizePolicy(sizePolicy);
-        QFont font2;
-        font2.setPointSize(10);
-        DescriptionImage->setFont(font2);
-        DescriptionImage->setPixmap(QPixmap(QString::fromUtf8(":/picters/zaconNut.png")));
-        DescriptionImage->setScaledContents(true);
-        DescriptionImage->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        DescriptionImage->setMargin(10);
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        DescriptionGroup->addWidget(DescriptionImage);
-
-        Description = new QLabel(DescriptionGroup_2);
-        Description->setObjectName(QString::fromUtf8("Description"));
-        sizePolicy.setHeightForWidth(Description->sizePolicy().hasHeightForWidth());
-        Description->setSizePolicy(sizePolicy);
-        QFont font3;
-        font3.setKerning(true);
-        Description->setFont(font3);
-        Description->setStyleSheet(QString::fromUtf8(""));
-        Description->setTextFormat(Qt::AutoText);
-        Description->setScaledContents(true);
-        Description->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        Description->setWordWrap(true);
-
-        DescriptionGroup->addWidget(Description);
-
-
-        gridLayout->addWidget(DescriptionGroup_2, 0, 1, 1, 1);
+        gridLayout->addItem(horizontalSpacer, 0, 1, 1, 1);
 
         PhysicalCalculateForm->setCentralWidget(centralwidget);
 
@@ -365,6 +372,10 @@ public:
     void retranslateUi(QMainWindow *PhysicalCalculateForm)
     {
         PhysicalCalculateForm->setWindowTitle(QCoreApplication::translate("PhysicalCalculateForm", "MainWindow", nullptr));
+        DescriptionImage->setText(QString());
+        Description->setText(QCoreApplication::translate("PhysicalCalculateForm", "\320\222\321\202\320\276\321\200\320\276\320\271 \320\267\320\260\320\272\320\276\320\275 \320\235\321\214\321\216\321\202\320\276\320\275\320\260 \342\200\224 \320\264\320\270\321\204\321\204\320\265\321\200\320\265\320\275\321\206\320\270\320\260\320\273\321\214\320\275\321\213\320\271 \320\267\320\260\320\272\320\276\320\275 \320\274\320\265\321\205\320\260\320\275\320\270\321\207\320\265\321\201\320\272\320\276\320\263\320\276 \320\264\320\262\320\270\320\266\320\265\320\275\320\270\321\217, \320\276\320\277\320\270\321\201\321\213\320\262\320\260\321\216\321\211\320\270\320\271 \320\267\320\260\320\262\320\270\321\201\320\270\320\274\320\276\321\201\321\202\321\214 \321\203\321\201\320\272\320\276\321\200\320\265\320\275\320\270\321\217 \321\202\320\265\320\273\320\260 \320\276\321\202 \321\200\320\260\320\262\320\275\320\276\320\264\320\265\320\271\321\201\321\202\320\262\321\203\321\216\321\211\320\265\320\271 \320\262\321\201\320\265\321\205 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275"
+                        "\320\275\321\213\321\205 \320\272 \321\202\320\265\320\273\321\203 \321\201\320\270\320\273 \320\270 \320\274\320\260\321\201\321\201\321\213 \321\202\320\265\320\273\320\260.\320\236\320\264\320\270\320\275 \320\270\320\267 \321\202\321\200\321\221\321\205 \320\267\320\260\320\272\320\276\320\275\320\276\320\262 \320\235\321\214\321\216\321\202\320\276\320\275\320\260. \320\236\321\201\320\275\320\276\320\262\320\275\320\276\320\271 \320\267\320\260\320\272\320\276\320\275 \320\264\320\270\320\275\320\260\320\274\320\270\320\272\320\270. F = ma   F - \321\201\321\203\320\274\320\274\320\260 \320\262\321\201\320\265\321\205 \321\201\320\270\320\273 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275\320\275\321\213\321\205 \320\272 \321\202\320\265\320\273\321\203, [\320\235]. m - \320\274\320\260\321\201\321\201\320\260 \321\202\320\265\320\273\320\260, [\320\232\320\263]. a \342\200\223 \321\203\321\201\320\272\320\276\321\200\320\265\320\275\320\270\320\265 \321\202\320\265\320\273\320\260, [\320"
+                        "\274/\321\201^2].", nullptr));
         label->setText(QCoreApplication::translate("PhysicalCalculateForm", "Value", nullptr));
         label_2->setText(QCoreApplication::translate("PhysicalCalculateForm", "Value2", nullptr));
         label_3->setText(QCoreApplication::translate("PhysicalCalculateForm", "Value3", nullptr));
@@ -404,8 +415,6 @@ public:
 
         radioButton_2->setText(QCoreApplication::translate("PhysicalCalculateForm", " \320\234\320\270\320\275\320\270\320\274\321\203\320\274 \320\270\320\275\321\202\320\265\321\200\321\204\320\265\321\200\320\265\320\275\321\206\320\270\320\270", nullptr));
         radioButton->setText(QCoreApplication::translate("PhysicalCalculateForm", "\320\234\320\260\320\272\321\201\320\270\320\274\321\203\320\274  \320\270\320\275\321\202\320\265\321\200\321\204\320\265\321\200\320\265\320\275\321\206\320\270\320\270", nullptr));
-        DescriptionImage->setText(QString());
-        Description->setText(QCoreApplication::translate("PhysicalCalculateForm", "Description", nullptr));
     } // retranslateUi
 
 };

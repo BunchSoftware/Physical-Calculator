@@ -328,7 +328,7 @@ void PhysicalCalculateForm::Calclulate()
     }
 }
 void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
-  for (int i = 0; i < arrayData.count();i++) {
+  for (int i = 0; i < arrayData.count(); i++) {
       if(arrayData[i].toString() == ""){
           if(ui->LabelEditGroup->children()[i]->metaObject()->className() == QString("QLabel")){
               QLabel *label = qobject_cast<QLabel*>(ui->LabelEditGroup->children()[i]);
@@ -340,7 +340,7 @@ void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
                   Q_ASSERT(lineEdit != nullptr );
                   lineEdit->hide();
               }
-              arrayData[i].toString().arg("");
+              arrayData[i].toString().arg(label->text() + QString(i));
           }
         }
       else
@@ -357,7 +357,7 @@ void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
                   Q_ASSERT(lineEdit != nullptr );
                   lineEdit->show();
               }
-              arrayData[i].toString().arg("");
+              arrayData[i].toString().arg(label->text() + QString(i));
           }
         }
     }
