@@ -33,7 +33,6 @@ private slots:
     void Calclulate();
     void UpdateLableAndLineInWindow(QJsonArray arrayData);
     void UpdateDescription(QPixmap image, QString textLabel);
-    void UpdateLineEdit(QString textLineEdit1, QString textLineEdit2, QString textLineEdit3, QString textLineEdit4, QString textLabel5);
     void Error();
     QString FromFloatToString(float value);
     void CheckLineEditIsEmpty(QString text, QString text2, QString text3, QString text4, QString text5);

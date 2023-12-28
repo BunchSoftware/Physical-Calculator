@@ -4,6 +4,7 @@ release/MainWindow.o
 release/PhysicalCalculateForm.o
 release/PlottingForm.o
 release/main.o
+release/parser.o
 release/qcustomplot.o
 release/qrc_pictures.o
 release/moc_CalculateForm.o
@@ -11,4 +12,5 @@ release/moc_ErrorForm.o
 release/moc_MainWindow.o
 release/moc_PhysicalCalculateForm.o
 release/moc_PlottingForm.o
+release/moc_parser.o
 release/moc_qcustomplot.o

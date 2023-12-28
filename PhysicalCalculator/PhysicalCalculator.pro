@@ -15,6 +15,7 @@ SOURCES += \
     PhysicalCalculateForm.cpp \
     PlottingForm.cpp \
     main.cpp \
+    parser.cpp \
     qcustomplot.cpp
 
 HEADERS += \
@@ -23,6 +24,8 @@ HEADERS += \
     MainWindow.h \
     PhysicalCalculateForm.h \
     PlottingForm.h \
+    interpreter.h \
+    parser.h \
     qcustomplot.h
 
 FORMS += \
@@ -30,7 +33,8 @@ FORMS += \
     ErrorForm.ui \
     MainWindow.ui \
     PhysicalCalculateForm.ui \
-    PlottingForm.ui
+    PlottingForm.ui \
+    parser.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

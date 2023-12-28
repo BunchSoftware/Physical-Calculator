@@ -330,13 +330,13 @@ void PhysicalCalculateForm::Calclulate()
 void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
   for (int i = 0; i < arrayData.count(); i++) {
       if(arrayData[i].toString() == ""){
-          if(ui->LabelEditGroup->children()[i]->metaObject()->className() == QString("QLabel")){
-              QLabel *label = qobject_cast<QLabel*>(ui->LabelEditGroup->children()[i]);
+          if(ui->LabelEditGroup->children()[i+1]->metaObject()->className() == QString("QLabel")){
+              QLabel *label = qobject_cast<QLabel*>(ui->LabelEditGroup->children()[i+1]);
               Q_ASSERT( label != nullptr );
               label->setText("");
               label->hide();
-              if(ui->EditGroup->children()[i]->metaObject()->className() == QString("QLineEdit")){
-                  QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->EditGroup->children()[i]);
+              if(ui->EditGroup->children()[i+1]->metaObject()->className() == QString("QLineEdit")){
+                  QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->EditGroup->children()[i+1]);
                   Q_ASSERT(lineEdit != nullptr );
                   lineEdit->hide();
               }
@@ -345,15 +345,15 @@ void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
         }
       else
         {
-          if(ui->LabelEditGroup->children()[i]->metaObject()->className() == QString("QLabel")){
-              QLabel *label = qobject_cast<QLabel*>(ui->LabelEditGroup->children()[i]);
+          if(ui->LabelEditGroup->children()[i+1]->metaObject()->className() == QString("QLabel")){
+              QLabel *label = qobject_cast<QLabel*>(ui->LabelEditGroup->children()[i+1]);
               Q_ASSERT( label != nullptr );
 
               label->setText(arrayData[i].toString());
               label->show();
 
-              if(ui->EditGroup->children()[i]->metaObject()->className() == QString("QLineEdit")){
-                  QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->EditGroup->children()[i]);
+              if(ui->EditGroup->children()[i+1]->metaObject()->className() == QString("QLineEdit")){
+                  QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->EditGroup->children()[i+1]);
                   Q_ASSERT(lineEdit != nullptr );
                   lineEdit->show();
               }
@@ -378,23 +378,6 @@ void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
         ui->Description->show();
       }
     }
-void PhysicalCalculateForm::UpdateLineEdit(QString textLineEdit1, QString textLineEdit2, QString textLineEdit3, QString textLineEdit4, QString textLineEdit5){
-    if (ui->lineEdit->text().isEmpty()) {
-        ui->lineEdit->setText(textLineEdit1);
-    }
-    else if (ui->lineEdit_2->text().isEmpty()){
-        ui->lineEdit_2->setText(textLineEdit2);
-    }
-    else if (ui->lineEdit_3->text().isEmpty()){
-        ui->lineEdit_3->setText(textLineEdit3);
-    }
-    else if (ui->lineEdit_4->text().isEmpty()){
-       ui->lineEdit_4->setText(textLineEdit4);
-    }
-    else if(ui->lineEdit_5->text().isEmpty()){
-       ui->lineEdit_5->setText(textLineEdit5);
-    }
-}
 QString PhysicalCalculateForm::FromFloatToString(float value){
     return QString::number(value);
 }

@@ -3,6 +3,7 @@
 #include "PhysicalCalculateForm.h"
 #include "PlottingForm.h"
 #include "CalculateForm.h"
+#include "parser.h"
 #include "QTabWidget"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -22,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tabWidget->setCurrentIndex(ui->tabWidget->count() - 1);
     ui->tabWidget->addTab(new PlottingForm(), QString("Построение графиков").arg(ui->tabWidget->count()+1));
     ui->tabWidget->setCurrentIndex(ui->tabWidget->count() - 1);
+    ui->tabWidget->addTab(new parser(), QString("123").arg(ui->tabWidget->count()+1));
 }
 
 MainWindow::~MainWindow()

@@ -4,6 +4,7 @@ debug/MainWindow.o
 debug/PhysicalCalculateForm.o
 debug/PlottingForm.o
 debug/main.o
+debug/parser.o
 debug/qcustomplot.o
 debug/qrc_pictures.o
 debug/moc_CalculateForm.o
@@ -11,4 +12,5 @@ debug/moc_ErrorForm.o
 debug/moc_MainWindow.o
 debug/moc_PhysicalCalculateForm.o
 debug/moc_PlottingForm.o
+debug/moc_parser.o
 debug/moc_qcustomplot.o
