@@ -6,6 +6,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QFile>
 namespace Ui {
 class PhysicalCalculateForm;
 }
@@ -26,16 +27,13 @@ private slots:
 
     void on_comboBox_activated(int index);
 
-    void on_radioButton_2_clicked();
-
-    void on_radioButton_clicked();
-
     void Calclulate();
     void UpdateLableAndLineInWindow(QJsonArray arrayData);
     void UpdateDescription(QPixmap image, QString textLabel);
     void Error();
     QString FromFloatToString(float value);
-    void CheckLineEditIsEmpty(QString text, QString text2, QString text3, QString text4, QString text5);
+    void CheckLineEditIsEmpty(std::vector<double> result);
+    QJsonObject GetJsonObject(QString path);
 
 
 private:

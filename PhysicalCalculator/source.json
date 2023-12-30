@@ -10,7 +10,23 @@
                 "a",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "formulExpression": [
+                "a*m",
+                "F/a",
+                "F/m",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         },
         {
             "header": "Закон Архимеда",
@@ -22,7 +38,23 @@
                 "V",
                 "F",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "F/g/V",
+                "F/p/V",
+                "F/p/g",
+                "p*g*V",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         },
         {
             "header": "Максимум интерференции",
@@ -34,7 +66,23 @@
                 "Разность хода",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "d/l",
+                "d/k",
+                "k*l",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         },
         {
             "header": "Минимум интерференции",
@@ -46,7 +94,23 @@
                 "Разность хода",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "((d/(l/2))-1)/2",
+                "(d/((2*k)+1))*2",
+                "((2*k)+1)*(l/2)",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Закон Ома",
             "description": "Сила тока в проводнике прямо пропорциональна напряжению на концах проводника  R = U/I  R - сопротивление [Ом] U - напряжение [В] I – сила тока [А]",
@@ -57,7 +121,23 @@
                 "I",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "I*R",
+                "U/I",
+                "U/R",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Сила Ампера",
             "description": "Это сила, с которой магнитное поле действует на помещенный в него проводник с током. F = B*I*L*sin ⁡a B – магнитное поле [Тл] I – сила тока [А] L – длина проводника [м] sin a – угол падения на магнитное поле ",
@@ -68,73 +148,185 @@
                 "I",
                 "l",
                 "a"
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "B * I * l * sin((a * 3.14)/180)",
+                "Fam/(I*l*I*sin((a * 3.14)/180))",
+                "Fam/(B*l*sin((a * 3.14)/180))",
+                "Fam/(B*I*sin((a * 3.14)/180))",
+                "(180 * asin(Fam/(B*l*I)))/3.14f)"
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Относительность массы",
-            "description": "Увеличение массы при увеличении скорости относительно массы тела в покое. E_0 = mc^2 E_0 - энергия [Дж] m - масса [Кг] c - скорость света [м/с]",
+            "description": "Увеличение массы при увеличении скорости относительно массы тела в покое. E = mc^2 E - энергия [Дж] m - масса [Кг] c - скорость света [м/с]",
             "path": "://images/relativity_mass.png",
             "symbolFormul": [
                 "E",
                 "m",
+                "v",
+                "",
+                ""
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "",
+                "",
                 "",
                 "",
                 ""
-            ]
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Кинетическая энергия",
             "description": "Физическая величина, характеризующая состояние тела или системы тел по их движению E = mV^2/2 E – кинетическая энергия [Дж] m – масса тела [Кг] V – скорость тела [м/с]",
             "path": "://images/kinetic_energy.png",
             "symbolFormul": [
-                "Ek",
+                "E",
                 "m",
                 "v",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "(m*v*v)/2",
+                "(2*E)/(v*v)",
+                "sqrt(2*E/(m))",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Сила Кулона",
             "description": "Величина электрической силы между двумя точечными зарядами в вакууме прямо пропорциональна произведению модулей зарядов и обратно пропорциональна квадрату расстояния между ними. F = k(q1*q2)/r^2 F – сила Кулона [] k -  коэффициент пропорциональности q1, q2 - взаимодействующие тела [] r - расстояние между телами [м]",
             "path": "://images/coulomb_force.png",
             "symbolFormul": [
-                "Заряд 1 тела",
-                "Заряд 2 тела",
-                "Расстояние между\nтелами",
-                "Сила Кулона * 9*10^9",
+                "r1",
+                "r2",
+                "l",
+                "f",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "((r1 * r2) / pow(l, 2))",
+                "((f * pow(l,2)) / r1)",
+                "((f * pow(l,2)) / r2)",
+                "sqrt((r1 * r2) / f)",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Сила Лоренца",
             "description": "Сила, с которой магнитное поле действует на заряженную частицу, движущуюся в этом поле F = q(E +VB) q - заряд частицы E - напряженность электрического поля [Н/Кл] V - скорость частицы [м/с] B - магнитная индукция [Тл]",
             "path": "://images/lorentz_force.png",
             "symbolFormul": [
-                "Угол",
-                "Индуктивность (B)",
-                "Скорость (v)",
-                "Заряд (q)",
-                "Сила (F)"
-            ]
+                "A",
+                "B",
+                "v",
+                "q",
+                "F"
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "(asin(F/(q*B*v)))*180/3.14",
+                "F/(sin(A*(3.14/180))*v*q)",
+                "F/(B*v*sin(A*(3.14/180)))",
+                "q*B*v*sin(A*(3.14/180)))",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Частота колебаний",
             "description": "Частота колебаний — число полных колебаний тела за одну секунду v =  1/T v – частота колебаний [Гц] T – период колебаний",
             "path": "://images/oscillation_frequency.png",
             "symbolFormul": [
-                "Частота (V)",
-                "Период (Т)",
+                "V",
+                "T",
                 "",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "1/V",
+                "1/T",
+                "",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Закон Томсана",
             "description": "Формула Томсона — математическое выражение связывающее собственную частоту, индуктивность и ёмкость электрических или электромагнитных колебаний в электрическом колебательном контуре T₀ = 1/f₀ = 2π√LC = 2π/w₀ = 2π/(1/√LC) = 2π √LC f₀ - частота собственных колебаний [] w₀ - угловая частота собственных колебаний [] L – индуктивность [] С – ёмкость []",
             "path": "://images/thomson_law.png",
             "symbolFormul": [
-                "Индуктивность контура",
-                "Емкость контура",
-                "Колебания в контуре",
+                "L",
+                "C",
+                "T",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "2*3.14*sqrt(L*C)",
+                "pow(T/(2*3.14),2)/L",
+                "pow(T/(2*3.14),2)/C)",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Период колебания пружинного маятника",
             "description": "Период колебания пружинного маятника – зависит от жесткости пружины: с увеличением коэффициента жесткости пружины период колебания маятника уменьшается  T = 2*pi*sqrt(m/k) T = 2 * √(m*k) T – период колебания пружинного маятника []  - постоянная [] m – масса груза [] k – жесткость пружины []",
@@ -145,7 +337,23 @@
                 "T",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "m/pow(T/(2*3.14) , 2)",
+                "pow(T/(2*3.14) , 2)*k",
+                "2*3.14*sqrt(m/k))",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Путь при свободном падении тела",
             "description": "",
@@ -156,7 +364,23 @@
                 "",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "sqrt(2*h/9.8)",
+                "9.8*pow(t,2)/2",
+                "",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Скорость свободного падения",
             "description": "",
@@ -167,7 +391,23 @@
                 "",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "v/9.8",
+                "9.8*t",
+                "",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Период полураспада",
             "description": "Время в течении которого количество частиц  и интенсивность реакции распада уменьшаются в двое N=N0×(1/2)^t/T N0 - исходное кол-во вещества []  t - время прошедшее с начала распада [] T - период полураспада []",
@@ -178,7 +418,23 @@
                 "t",
                 "T",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "No*pow(2,-t/T)",
+                "N/pow(2,-t/T)",
+                "logbase(N/No,2)* -T",
+                "logbase(N/No,2)* -t)",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Длина волны",
             "description": "Длина волны, которая проявляется у всех частиц в квантовой механике согласно корпускулярно-волновому дуализму, и определяющая плотность вероятности обнаружения объекта в заданной точке конфигурационного пространства. Длина волны де Бройля обратно пропорциональна импульсу частицы λ= h/p λ – длина волны [] h - постоянная планка [] p – конечный импульс []",
@@ -189,7 +445,23 @@
                 "lam",
                 "",
                 ""
-            ]
+            ],      
+            "formulExpression": [
+                "lam/u",
+                "lam/T",
+                "u*T",
+                "",
+                ""
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Скорость",
             "description": "Отношениее растояние, пройденного тола и времени, затраченого на путь v = S/t v - скорость [] S - растояние [] T - время []",
@@ -200,7 +472,23 @@
                 "v",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "v*t",
+                "S/v",
+                "S/t",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Абсолютная температура",
             "description": "Это температура измеряеемая в кельвинах T = t+T0 t - температура в С [] T0 = 273К []",
@@ -208,10 +496,26 @@
             "symbolFormul": [
                 "t",
                 "T",
-                "a",
+                "",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "round(T-273.15)",
+                "t+273.15",
+                "",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Количество вещества",
             "description": "Кол-во однотипных структурных едениц содержащихся в веществе v = m/M m - масса веществ [] M - молярная масса  []",
@@ -222,7 +526,23 @@
                 "V",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "v*M",
+                "m/v",
+                "m/M",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Концентрация молекул",
             "description": "Величина, количественно характеризующая содержание компонента относительно всей смеси. Cм = m/(M*V) Cм – молярная концентрация [] m – масса растворенного в растворе вещества [] M – молярная масса растворенного вещества  [] V – объем рествора []",
@@ -233,29 +553,77 @@
                 "n",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "n*V",
+                "N/n",
+                "N/V",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Скорость распространения волны",
             "description": "Расстояние, на которое распространяется волна в еденицу времени V = λ/T λ - длина волны [] T - период колебаний [] V - скорость ее распространения  []",
             "path": "://images/speed_light.png",
             "symbolFormul": [
-                "λ",
+                "lam",
                 "V",
                 "T",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "u/v",
+                "u/lam",
+                "lam*v",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Координата в момент времени t",
             "description": "",
             "path": "://images/coordinate_time.png",
             "symbolFormul": [
-                "Начальная координата",
-                "Время падения",
+                "h",
+                "t",
                 "",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "(g*pow(t,2))/2",
+                "sqrt((h*2)/g)",
+                "",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Дальность полета по горизонтали",
             "description": "",
@@ -266,84 +634,212 @@
                 "Время",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Потенциальная энергия",
             "description": "",
             "path": "://images/potential_energy.png",
             "symbolFormul": [
-                "Потенциальная энергия",
-                "Масса",
-                "Высота",
+                "E",
+                "m",
+                "h",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "m*h*9.8",
+                "E/(h*9.8)",
+                "E/(m*9.8)",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Сила тяжести",
             "description": "",
             "path": "://images/force_gravity.png",
             "symbolFormul": [
-                "Сила тяжести",
-                "Масса",
+                "F",
+                "m",
                 "",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "m*9.8",
+                "f/9.8",
+                "",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Количество передоваемой теплоты",
             "description": "",
             "path": "://images/amount_heat_released.png",
             "symbolFormul": [
-                "Количество теплоты",
-                "Теплоемкость",
-                "Начальная температура",
-                "Конечная температура",
-                ""
-            ]
+                "Q",
+                "c",
+                "m",
+                "t1",
+                "t2"
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "c*m*(t1-t2)",
+                "q/(m*(t1-t2))",
+                "q/(c*(t1-t2))",
+                "(q/(c*m))+t2",
+                "t1-(q/(c*m)))"
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Плавление тела",
             "description": "",
             "path": "://images/body_melting.png",
             "symbolFormul": [
-                "Количество теплоты",
-                "Удельная теплота плавления",
-                "Масса",
+                "Q",
+                "l",
+                "m",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "l*m",
+                "q/m",
+                "q/l",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Теплота парообразования",
             "description": "",
             "path": "://images/heat_vaporization.png",
             "symbolFormul": [
-                "Количество теплоты",
-                "Удельная теп. парооб.",
-                "Масса",
+                "Q",
+                "L",
+                "m",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "L*m",
+                "q/m",
+                "q/L",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Горение топлива",
             "description": "Физико-химический процесс перехлда из исходного  вещества в продукты сгорания сопровождающийся интенивным выделением тепла Q = q*m [] q - удельная теплота сгорания  [] m - масса вещества   []",
             "path": "://images/fuel_combustion.png",
             "symbolFormul": [
-                "Количество теплоты",
-                "Удельная теп. сгорания",
-                "Масса",
+                "Q",
+                "q",
+                "m",
                 "",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "q*m",
+                "Q/m",
+                "Q/q",
+                "",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }, {
             "header": "Удельное сопротивление проводника",
             "description": "",
             "path": "://images/conductor_resistivity.png",
             "symbolFormul": [
-                "Сопротивление",
-                "Удельное сопротивление",
-                "Длина проводника",
-                "Площадь попереч. сеч.",
+                "R",
+                "p",
+                "l",
+                "S",
                 ""
-            ]
+            ],
+            "mathValueSymbolFormul": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],      
+            "formulExpression": [
+                "(p*l)/s",
+                "(R*s)/l",
+                "(R*s)/p",
+                "(p*l)/R)",
+                ""
+            ],
+            "radioButton": false,
+            "radioButton2": false
         }
     ]
 }

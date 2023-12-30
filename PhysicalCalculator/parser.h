@@ -16,8 +16,6 @@ public:
   ~parser();
 
 private slots:
-  void on_line_textEdited(const QString &arg1);
-
   void on_pushButton_clicked();
 
 private:

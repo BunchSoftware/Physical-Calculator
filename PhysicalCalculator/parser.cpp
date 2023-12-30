@@ -10,15 +10,12 @@ parser::parser(QWidget *parent) :
   ui(new Ui::parser)
 {
   ui->setupUi(this);
+
 }
 
 parser::~parser()
 {
   delete ui;
-}
-
-void parser::on_line_textEdited(const QString &arg1)
-{
 }
 
 void parser::on_pushButton_clicked()
