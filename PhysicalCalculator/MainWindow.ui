@@ -72,7 +72,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Чтобы приступить к решению задач, добавьте новые вкладки</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Чтобы приступить к решению задач, добавьте новые вкладки&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
