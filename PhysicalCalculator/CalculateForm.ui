@@ -100,7 +100,7 @@
 color: rgb(136, 136, 136);</string>
          </property>
          <property name="text">
-          <string>1231231</string>
+          <string>2+2</string>
          </property>
         </widget>
        </item>
@@ -121,7 +121,7 @@ color: rgb(136, 136, 136);</string>
           <string notr="true"/>
          </property>
          <property name="text">
-          <string>12312</string>
+          <string>4</string>
          </property>
         </widget>
        </item>

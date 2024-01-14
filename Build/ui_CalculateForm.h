@@ -519,8 +519,8 @@ public:
     void retranslateUi(QMainWindow *CalculateForm)
     {
         CalculateForm->setWindowTitle(QCoreApplication::translate("CalculateForm", "MainWindow", nullptr));
-        expression->setText(QCoreApplication::translate("CalculateForm", "1231231", nullptr));
-        result->setText(QCoreApplication::translate("CalculateForm", "12312", nullptr));
+        expression->setText(QCoreApplication::translate("CalculateForm", "2+2", nullptr));
+        result->setText(QCoreApplication::translate("CalculateForm", "4", nullptr));
         number_1->setText(QCoreApplication::translate("CalculateForm", "1", nullptr));
         equals->setText(QCoreApplication::translate("CalculateForm", "=", nullptr));
         percent->setText(QCoreApplication::translate("CalculateForm", "%", nullptr));

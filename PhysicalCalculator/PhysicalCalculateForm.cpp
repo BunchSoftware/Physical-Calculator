@@ -24,6 +24,14 @@ PhysicalCalculateForm::PhysicalCalculateForm(QWidget *parent) :
     ui->setupUi(this);
     ui->pushButton->show();
 
+    for (int i = 0; i < ui->EditGroup->children().count() - 1; i++) {
+        if(ui->EditGroup->children()[i]->metaObject()->className() == QString("QLineEdit")){
+            QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->EditGroup->children()[i]);
+            Q_ASSERT( lineEdit != nullptr );
+            lineEdit->setValidator(new QDoubleValidator(0, 100, 6, this) );
+        }
+    }
+
     QJsonArray jsonArray = GetJsonObject(":/source.json")["arrayData"].toArray();
     for (int i = 0; i < jsonArray.count(); i++) {
         QJsonObject object = jsonArray[i].toObject();
@@ -60,7 +68,7 @@ void PhysicalCalculateForm::on_pushButton_clicked()
             }
         }
     }
-    Calclulate();
+      Calclulate();
 }
 
 void PhysicalCalculateForm::Error(){
@@ -124,14 +132,14 @@ void PhysicalCalculateForm::Calclulate()
           for (int i = 0; i < formulExpression.count(); i++)
           {
               QString expression = formulExpression[i].toString();
-              for (int j = 0; j < value.size(); j++)
-              {
-                  if(symbolFormul[j].toString().isEmpty())
-                    continue;
-                  else
-                    expression.replace(symbolFormul[j].toString(), QString::number(value[j]));
-              }
-              result.push_back(InterpreteExperssion(expression.toStdWString()));
+                 for (int j = 0; j < value.size(); j++)
+                 {
+                     if(symbolFormul[j].toString().isEmpty())
+                       continue;
+                     else
+                       expression.replace(symbolFormul[j].toString(), QString::number(value[j]));
+                 }
+                 result.push_back(InterpreteExperssion(expression.toStdWString()));
           }
       }
       else
@@ -203,7 +211,7 @@ void PhysicalCalculateForm::CheckLineEditIsEmpty(std::vector<double> result)
               Q_ASSERT(lineEdit != nullptr );
               if(lineEdit->text().isEmpty())
               {
-                ui->lineEdit->setText(QString::number(result[i]));
+                lineEdit->setText(QString::number(result[i]));
                 return;
               }
           }

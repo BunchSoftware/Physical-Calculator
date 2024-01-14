@@ -20,6 +20,14 @@ PlottingForm::PlottingForm(QWidget *parent) :
     ui->widget->setInteraction(QCP::iRangeDrag);
     ui->widget->setInteraction(QCP::iRangeZoom);
 
+    for (int i = 0; i < ui->LineEditGroup->children().count() - 1; i++) {
+        if(ui->LineEditGroup->children()[i]->metaObject()->className() == QString("QLineEdit")){
+            QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->LineEditGroup->children()[i]);
+            Q_ASSERT( lineEdit != nullptr );
+            lineEdit->setValidator(new QDoubleValidator(0, 100, 6, this) );
+        }
+    }
+
     on_comboBox_activated(0);
 }
 
