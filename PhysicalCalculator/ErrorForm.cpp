@@ -6,8 +6,6 @@ ErrorForm::ErrorForm(QWidget *parent) :
     ui(new Ui::ErrorForm)
 {
     ui->setupUi(this);
-    setWindowIcon(QIcon(":/picters/icon-calculator.png"));
-    setWindowTitle("Ошибка");
 }
 
 ErrorForm::~ErrorForm()

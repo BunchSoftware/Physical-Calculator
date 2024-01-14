@@ -10,8 +10,10 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -29,6 +31,7 @@ public:
     QAction *plotting;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
+    QLabel *label;
     QTabWidget *tabWidget;
     QMenuBar *menubar;
     QMenu *menu;
@@ -38,8 +41,14 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+        MainWindow->setWindowModality(Qt::WindowModal);
         MainWindow->resize(1000, 700);
         MainWindow->setMinimumSize(QSize(1000, 700));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/images/icon-calculator.png"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
+        MainWindow->setAutoFillBackground(false);
+        MainWindow->setIconSize(QSize(512, 512));
         calculate = new QAction(MainWindow);
         calculate->setObjectName(QString::fromUtf8("calculate"));
         physical_calculate = new QAction(MainWindow);
@@ -56,13 +65,80 @@ public:
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(centralwidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setEnabled(true);
+        sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy);
+        QFont font;
+        font.setPointSize(30);
+        label->setFont(font);
+        label->setAlignment(Qt::AlignCenter);
+        label->setWordWrap(true);
+        label->setMargin(100);
+
+        verticalLayout->addWidget(label);
+
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        QSizePolicy sizePolicy1(QSizePolicy::Ignored, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
-        tabWidget->setSizePolicy(sizePolicy1);
+        tabWidget->setEnabled(true);
+        sizePolicy.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
+        tabWidget->setSizePolicy(sizePolicy);
+        tabWidget->setStyleSheet(QString::fromUtf8("QTabWidget\n"
+"{\n"
+"    background-color: #4740d2;\n"
+"    border: none;\n"
+"}\n"
+"QTabWidget::pane \n"
+"{\n"
+"    border-top-right-radius: 10px;\n"
+"	background-color: white;\n"
+"}\n"
+"\n"
+"QTabBar\n"
+"{\n"
+"	background-color: #5049de;\n"
+"}\n"
+"QTabBar::tab\n"
+"{\n"
+"	border: none;\n"
+"  	padding: 10;\n"
+"  	font: 10px Bahnschrift SemiBold;\n"
+"  	color: white;\n"
+"}\n"
+"\n"
+"QTabBar::close-button \n"
+"{\n"
+"    image: url(:/images/close-button-black.png);\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: right; \n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QTabBar::tab:first:selected\n"
+"{\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:!selected\n"
+"{\n"
+"  	\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:selected\n"
+"{\n"
+"    background-color: #ffffff;\n"
+"    color: #393939;\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:!selected:hover\n"
+"{\n"
+"	\n"
+"}"));
         tabWidget->setDocumentMode(true);
         tabWidget->setTabsClosable(true);
         tabWidget->setMovable(true);
@@ -95,10 +171,11 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Physical Calculator", nullptr));
         calculate->setText(QCoreApplication::translate("MainWindow", "\320\232\320\260\320\273\321\214\320\272\321\203\320\273\321\217\321\202\320\276\321\200", nullptr));
         physical_calculate->setText(QCoreApplication::translate("MainWindow", "\320\244\320\270\320\267\320\270\321\207\320\265\321\201\320\272\320\270\320\271 \320\272\320\260\320\273\321\214\320\272\321\203\320\273\321\217\321\202\320\276\321\200", nullptr));
         plotting->setText(QCoreApplication::translate("MainWindow", "\320\237\320\276\321\201\321\202\321\200\320\276\320\265\320\275\320\270\320\265 \320\263\321\200\320\260\321\204\320\270\320\272\320\276\320\262", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\320\247\321\202\320\276\320\261\321\213 \320\277\321\200\320\270\321\201\321\202\321\203\320\277\320\270\321\202\321\214 \320\272 \321\200\320\265\321\210\320\265\320\275\320\270\321\216 \320\267\320\260\320\264\320\260\321\207, \320\264\320\276\320\261\320\260\320\262\321\214\321\202\320\265 \320\275\320\276\320\262\321\213\320\265 \320\262\320\272\320\273\320\260\320\264\320\272\320\270", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\222\320\272\320\273\320\260\320\264\320\272\320\270", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\262\320\272\320\273\320\260\320\264\320\272\321\203", nullptr));
     } // retranslateUi

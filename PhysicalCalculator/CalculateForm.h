@@ -18,18 +18,7 @@ public:
     ~CalculateForm();
 
 private slots:
-    void digits_numbers();
-    void on_pushButton_dot_clicked();
     void operations();
-    void math_operations();
-
-    void on_pushButton_ravn_clicked();
-
-    void on_pushButton_C_clicked();
-
-    void on_pushButton_fisic_cal_clicked();
-
-    void on_pushButton_C_2_clicked();
 
 private:
     Ui::CalculateForm *ui;

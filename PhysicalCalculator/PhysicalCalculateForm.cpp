@@ -20,8 +20,6 @@ PhysicalCalculateForm::PhysicalCalculateForm(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::PhysicalCalculateForm)
 {
-    setWindowTitle("Physical Calculator");
-    setWindowIcon(QIcon(":/picters/icon-calculator.png"));
 
     ui->setupUi(this);
     ui->pushButton->show();
@@ -151,6 +149,7 @@ void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
               Q_ASSERT( label != nullptr );
               label->setText("");
               label->hide();
+
               if(ui->EditGroup->children()[i+1]->metaObject()->className() == QString("QLineEdit")){
                   QLineEdit *lineEdit = qobject_cast<QLineEdit*>(ui->EditGroup->children()[i+1]);
                   Q_ASSERT(lineEdit != nullptr );

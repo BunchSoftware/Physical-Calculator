@@ -629,9 +629,9 @@
             "description": "",
             "path": "://images/horizontal_flight_range.png",
             "symbolFormul": [
-                "Расстояние",
-                "Начальная скорость",
-                "Время",
+                "S",
+                "U",
+                "t",
                 "",
                 ""
             ],
@@ -643,9 +643,9 @@
                 0
             ],      
             "formulExpression": [
-                "",
-                "",
-                "",
+                "U*t",
+                "S/t",
+                "S/U",
                 "",
                 ""
             ],

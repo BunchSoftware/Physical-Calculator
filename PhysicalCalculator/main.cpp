@@ -8,13 +8,12 @@ int main(int argc, char **argv)
 {
     QApplication a(argc, argv);
 
-    QFile file(":/Combinear.qss");
-    file.open(QFile::ReadOnly);
-    QString styleSheet { QLatin1String(file.readAll()) };
-    a.setStyleSheet(styleSheet);
+//    QFile file(":/Combinear.qss");
+//    file.open(QFile::ReadOnly);
+//    QString styleSheet { QLatin1String(file.readAll()) };
+//    a.setStyleSheet(styleSheet);
 
     MainWindow w;
-    w.setWindowTitle("Physical Calculator");
     w.show();
     return a.exec();
 }

@@ -25,6 +25,7 @@ private slots:
     void TimerSlot();
 
     void on_comboBox_activated(int index);
+    void UpdateLableAndLineInWindow(QString textLabel1, QString textLabel2, QString textLabel3);
 
 private:
     Ui::PlottingForm *ui;

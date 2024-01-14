@@ -143,43 +143,152 @@ release/qrc_pictures.cpp: ../PhysicalCalculator/pictures.qrc \
 		../../../../Qt/5.14.2/mingw73_64/bin/rcc.exe \
 		../PhysicalCalculator/Combinear.qss \
 		../PhysicalCalculator/source.json \
-		../PhysicalCalculator/images/icon-back-arrow.png \
+		../PhysicalCalculator/images/radiobutton2.svg \
 		../PhysicalCalculator/images/potential_energy.png \
-		../PhysicalCalculator/images/archimedes_law.png \
-		../PhysicalCalculator/images/half_life.png \
-		../PhysicalCalculator/images/ampere_power.png \
-		../PhysicalCalculator/images/silatoka.png \
-		../PhysicalCalculator/images/coordinate_time.png \
-		../PhysicalCalculator/images/average_speed.png \
-		../PhysicalCalculator/images/heat_vaporization.png \
-		../PhysicalCalculator/images/ohm_law.png \
-		../PhysicalCalculator/images/Close.png \
-		../PhysicalCalculator/images/icon-settings.png \
-		../PhysicalCalculator/images/body_melting.png \
-		../PhysicalCalculator/images/icon-calculator.png \
-		../PhysicalCalculator/images/lorentz_force.png \
-		../PhysicalCalculator/images/amount_substance.png \
-		../PhysicalCalculator/images/oscillation_frequency.png \
-		../PhysicalCalculator/images/wavelength.png \
-		../PhysicalCalculator/images/force_gravity.png \
-		../PhysicalCalculator/images/free_path.png \
-		../PhysicalCalculator/images/kinetic_energy.png \
-		../PhysicalCalculator/images/thomson_law.png \
-		../PhysicalCalculator/images/interference_max.png \
-		../PhysicalCalculator/images/fuel_combustion.png \
-		../PhysicalCalculator/images/conductor_resistivity.png \
-		../PhysicalCalculator/images/absolute_temperature.png \
-		../PhysicalCalculator/images/horizontal_flight_range.png \
-		../PhysicalCalculator/images/newton_second_law.png \
-		../PhysicalCalculator/images/speed_light.png \
-		../PhysicalCalculator/images/molecular_concentration.png \
-		../PhysicalCalculator/images/amount_heat_released.png \
-		../PhysicalCalculator/images/close-button-black.png \
-		../PhysicalCalculator/images/spring_pendulum.png \
 		../PhysicalCalculator/images/icon-menu.png \
+		../PhysicalCalculator/images/free_path.png \
+		../PhysicalCalculator/images/tusur_logo_main_color_cmyk.png \
+		../PhysicalCalculator/images/Close.png \
+		../PhysicalCalculator/images/newton_second_law.png \
+		../PhysicalCalculator/images/check.svg \
+		../PhysicalCalculator/images/radiobutton.svg \
+		../PhysicalCalculator/images/amount_heat_released.png \
 		../PhysicalCalculator/images/coulomb_force.png \
-		../PhysicalCalculator/images/relativity_mass.png \
+		../PhysicalCalculator/images/half_life.png \
+		../PhysicalCalculator/images/fuel_combustion.png \
+		../PhysicalCalculator/images/close-button-black.png \
+		../PhysicalCalculator/images/heat_vaporization.png \
+		../PhysicalCalculator/images/force_gravity.png \
+		../PhysicalCalculator/images/icon-calculator.png \
+		../PhysicalCalculator/images/speed_light.png \
+		../PhysicalCalculator/images/radiobutton.png \
+		../PhysicalCalculator/images/interference_max.png \
+		../PhysicalCalculator/images/spring_pendulum.png \
+		../PhysicalCalculator/images/horizontal_flight_range.png \
+		../PhysicalCalculator/images/wavelength.png \
+		../PhysicalCalculator/images/ohm_law.png \
+		../PhysicalCalculator/images/lorentz_force.png \
+		../PhysicalCalculator/images/oscillation_frequency.png \
+		../PhysicalCalculator/images/coordinate_time.png \
+		../PhysicalCalculator/images/kinetic_energy.png \
+		../PhysicalCalculator/images/absolute_temperature.png \
 		../PhysicalCalculator/images/interference_min.png \
+		../PhysicalCalculator/images/relativity_mass.png \
+		../PhysicalCalculator/images/downarrow.png \
+		../PhysicalCalculator/images/average_speed.png \
+		../PhysicalCalculator/images/molecular_concentration.png \
+		../PhysicalCalculator/images/body_melting.png \
+		../PhysicalCalculator/images/archimedes_law.png \
+		../PhysicalCalculator/images/icon-settings.png \
+		../PhysicalCalculator/images/icon-back-arrow.png \
+		../PhysicalCalculator/images/ampere_power.png \
+		../PhysicalCalculator/images/radiobutton3.svg \
+		../PhysicalCalculator/images/silatoka.png \
+		../PhysicalCalculator/images/thomson_law.png \
+		../PhysicalCalculator/images/amount_substance.png \
+		../PhysicalCalculator/images/conductor_resistivity.png \
+		../PhysicalCalculator/images/icons_tree/point-on-surface-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/layer-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/experiment-results-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/sinusoid-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/cube-3d-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/cube-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/cube-svgrepo-com_struct.svg \
+		../PhysicalCalculator/images/icons_tree/temp/point-on-surface-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/temp/download\ (33).svg \
+		../PhysicalCalculator/images/icons_tree/temp/depth-lab-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/temp/experiment-results-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_tree/temp/sinusoid-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_web/1history.svg \
+		../PhysicalCalculator/images/icons_web/1frequency.svg \
+		../PhysicalCalculator/images/icons_web/swim.svg \
+		../PhysicalCalculator/images/icons_web/1mesh-settings.svg \
+		../PhysicalCalculator/images/icons_web/voice_on.svg \
+		../PhysicalCalculator/images/icons_web/zoom-out.svg \
+		../PhysicalCalculator/images/icons_web/teacher.svg \
+		../PhysicalCalculator/images/icons_web/360-rotate.svg \
+		../PhysicalCalculator/images/icons_web/ball.svg \
+		../PhysicalCalculator/images/icons_web/run.svg \
+		../PhysicalCalculator/images/icons_web/devices.svg \
+		../PhysicalCalculator/images/icons_web/cloud_reverse.svg \
+		../PhysicalCalculator/images/icons_web/conference.svg \
+		../PhysicalCalculator/images/icons_web/link.svg \
+		../PhysicalCalculator/images/icons_web/code.svg \
+		../PhysicalCalculator/images/icons_web/group.svg \
+		../PhysicalCalculator/images/icons_web/marketing.svg \
+		../PhysicalCalculator/images/icons_web/date.svg \
+		../PhysicalCalculator/images/icons_web/tennis.svg \
+		../PhysicalCalculator/images/icons_web/icons.qrc \
+		../PhysicalCalculator/images/icons_web/1boundaries.svg \
+		../PhysicalCalculator/images/icons_web/camera.svg \
+		../PhysicalCalculator/images/icons_web/rake.svg \
+		../PhysicalCalculator/images/icons_web/book_2.svg \
+		../PhysicalCalculator/images/icons_web/service_2.svg \
+		../PhysicalCalculator/images/icons_web/zoom-in.svg \
+		../PhysicalCalculator/images/icons_web/point.svg \
+		../PhysicalCalculator/images/icons_web/documents.svg \
+		../PhysicalCalculator/images/icons_web/wifi_2.svg \
+		../PhysicalCalculator/images/icons_web/document.svg \
+		../PhysicalCalculator/images/icons_web/graduate.svg \
+		../PhysicalCalculator/images/icons_web/printer.svg \
+		../PhysicalCalculator/images/icons_web/mask.svg \
+		../PhysicalCalculator/images/icons_web/ring.svg \
+		../PhysicalCalculator/images/icons_web/code_2.svg \
+		../PhysicalCalculator/images/icons_web/wave.svg \
+		../PhysicalCalculator/images/icons_web/1mesh-generator.svg \
+		../PhysicalCalculator/images/icons_web/team_2.svg \
+		../PhysicalCalculator/images/icons_web/projector.svg \
+		../PhysicalCalculator/images/icons_web/game.svg \
+		../PhysicalCalculator/images/icons_web/football.svg \
+		../PhysicalCalculator/images/icons_web/students.svg \
+		../PhysicalCalculator/images/icons_web/wifi.svg \
+		../PhysicalCalculator/images/icons_web/search.svg \
+		../PhysicalCalculator/images/icons_web/chat.svg \
+		../PhysicalCalculator/images/icons_web/1logs.svg \
+		../PhysicalCalculator/images/icons_web/up.svg \
+		../PhysicalCalculator/images/icons_web/volume.svg \
+		../PhysicalCalculator/images/icons_web/down.svg \
+		../PhysicalCalculator/images/icons_web/medal.svg \
+		../PhysicalCalculator/images/icons_web/team.svg \
+		../PhysicalCalculator/images/icons_web/1solver.svg \
+		../PhysicalCalculator/images/icons_web/voice_off.svg \
+		../PhysicalCalculator/images/icons_web/mail.svg \
+		../PhysicalCalculator/images/icons_web/1mesh-view.svg \
+		../PhysicalCalculator/images/icons_web/2d-rotate.svg \
+		../PhysicalCalculator/images/icons_web/book.svg \
+		../PhysicalCalculator/images/icons_web/1queue-listing-cards-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_web/service.svg \
+		../PhysicalCalculator/images/icons_web/flash.svg \
+		../PhysicalCalculator/images/icons_web/global.svg \
+		../PhysicalCalculator/images/icons_web/robot.svg \
+		../PhysicalCalculator/images/icons_web/right.svg \
+		../PhysicalCalculator/images/icons_web/1listing.svg \
+		../PhysicalCalculator/images/icons_web/1optimizer.svg \
+		../PhysicalCalculator/images/icons_web/reset-view.svg \
+		../PhysicalCalculator/images/icons_web/brain.svg \
+		../PhysicalCalculator/images/icons_web/1solver-settings.svg \
+		../PhysicalCalculator/images/icons_web/1sweep.svg \
+		../PhysicalCalculator/images/icons_web/micro.svg \
+		../PhysicalCalculator/images/icons_web/cloud.svg \
+		../PhysicalCalculator/images/icons_web/voice.svg \
+		../PhysicalCalculator/images/icons_web/person.svg \
+		../PhysicalCalculator/images/icons_web/build.svg \
+		../PhysicalCalculator/images/icons_web/settings.svg \
+		../PhysicalCalculator/images/icons_web/left.svg \
+		../PhysicalCalculator/images/icons_web/theatre.svg \
+		../PhysicalCalculator/images/icons_web/temp/1frequency.svg \
+		../PhysicalCalculator/images/icons_web/temp/1solver.svg \
+		../PhysicalCalculator/images/icons_web/temp/1listing.svg \
+		../PhysicalCalculator/images/icons_web/temp/1mesh-view.svg \
+		../PhysicalCalculator/images/icons_web/temp/1history.svg \
+		../PhysicalCalculator/images/icons_web/temp/1boundaries.svg \
+		../PhysicalCalculator/images/icons_web/temp/1queue-listing-cards-svgrepo-com.svg \
+		../PhysicalCalculator/images/icons_web/temp/1logs.svg \
+		../PhysicalCalculator/images/icons_web/temp/1optimizer.svg \
+		../PhysicalCalculator/images/icons_web/temp/1mesh-generator.svg \
+		../PhysicalCalculator/images/icons_web/temp/1solver-settings.svg \
+		../PhysicalCalculator/images/icons_web/temp/1mesh-settings.svg \
+		../PhysicalCalculator/images/icons_web/temp/1sweep.svg \
 		C:/Users/Den4o/Downloads/Telegram\ Desktop/Combinear.qss
 	E:\Qt\5.14.2\mingw73_64\bin\rcc.exe -name pictures ..\PhysicalCalculator\pictures.qrc -o release\qrc_pictures.cpp
 
@@ -313,6 +422,7 @@ release/moc_CalculateForm.cpp: ../PhysicalCalculator/CalculateForm.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsondocument.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonArray \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsonarray.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile \
 		../PhysicalCalculator/MainWindow.h \
 		release/moc_predefs.h \
 		../../../../Qt/5.14.2/mingw73_64/bin/moc.exe
@@ -660,6 +770,7 @@ release/moc_PhysicalCalculateForm.cpp: ../PhysicalCalculator/PhysicalCalculateFo
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsondocument.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonArray \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsonarray.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile \
 		release/moc_predefs.h \
 		../../../../Qt/5.14.2/mingw73_64/bin/moc.exe
 	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include E:/Files/GitHub/Physical-Calculator/Build/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -IE:/Files/GitHub/Physical-Calculator/PhysicalCalculator -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtPrintSupport -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\PhysicalCalculator\PhysicalCalculateForm.h -o release\moc_PhysicalCalculateForm.cpp
@@ -2079,6 +2190,7 @@ release/CalculateForm.o: ../PhysicalCalculator/CalculateForm.cpp ../PhysicalCalc
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsondocument.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonArray \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsonarray.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile \
 		../PhysicalCalculator/MainWindow.h \
 		ui_CalculateForm.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
@@ -2101,7 +2213,8 @@ release/CalculateForm.o: ../PhysicalCalculator/CalculateForm.cpp ../PhysicalCalc
 		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
 		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/QVBoxLayout
+		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/QVBoxLayout \
+		../PhysicalCalculator/interpreter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CalculateForm.o ..\PhysicalCalculator\CalculateForm.cpp
 
 release/ErrorForm.o: ../PhysicalCalculator/ErrorForm.cpp ../PhysicalCalculator/ErrorForm.h \
@@ -2376,6 +2489,7 @@ release/MainWindow.o: ../PhysicalCalculator/MainWindow.cpp ../PhysicalCalculator
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsondocument.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonArray \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsonarray.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile \
 		../PhysicalCalculator/CalculateForm.h \
 		../PhysicalCalculator/parser.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\MainWindow.o ..\PhysicalCalculator\MainWindow.cpp
@@ -2500,6 +2614,7 @@ release/PhysicalCalculateForm.o: ../PhysicalCalculator/PhysicalCalculateForm.cpp
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsondocument.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonArray \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsonarray.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile \
 		ui_PhysicalCalculateForm.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
 		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
@@ -2551,7 +2666,7 @@ release/PhysicalCalculateForm.o: ../PhysicalCalculator/PhysicalCalculateForm.cpp
 		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/qdialog.h \
 		../PhysicalCalculator/CalculateForm.h \
 		../PhysicalCalculator/MainWindow.h \
-		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile
+		../PhysicalCalculator/interpreter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\PhysicalCalculateForm.o ..\PhysicalCalculator\PhysicalCalculateForm.cpp
 
 release/PlottingForm.o: ../PhysicalCalculator/PlottingForm.cpp ../PhysicalCalculator/PlottingForm.h \
@@ -3084,6 +3199,7 @@ release/PlottingForm.o: ../PhysicalCalculator/PlottingForm.cpp ../PhysicalCalcul
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonObject \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonDocument \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonArray \
+		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile \
 		../PhysicalCalculator/MainWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\PlottingForm.o ..\PhysicalCalculator\PlottingForm.cpp
 
@@ -3208,6 +3324,7 @@ release/main.o: ../PhysicalCalculator/main.cpp ../PhysicalCalculator/CalculateFo
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsondocument.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QJsonArray \
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qjsonarray.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile \
 		../PhysicalCalculator/MainWindow.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
 		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
@@ -3215,8 +3332,7 @@ release/main.o: ../PhysicalCalculator/main.cpp ../PhysicalCalculator/CalculateFo
 		../../../../Qt/5.14.2/mingw73_64/include/QtCore/qeventloop.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
-		../../../../Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
-		../../../../Qt/5.14.2/mingw73_64/include/QtCore/QFile
+		../../../../Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\PhysicalCalculator\main.cpp
 
 release/parser.o: ../PhysicalCalculator/parser.cpp ../PhysicalCalculator/parser.h \
@@ -3347,6 +3463,10 @@ release/parser.o: ../PhysicalCalculator/parser.cpp ../PhysicalCalculator/parser.
 		../../../../Qt/5.14.2/mingw73_64/include/QtGui/qtextformat.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtGui/qpen.h \
 		../../../../Qt/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
+		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		../../../../Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		../PhysicalCalculator/interpreter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\parser.o ..\PhysicalCalculator\parser.cpp
 

@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,7 +20,20 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Physical Calculator</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pictures.qrc">
+    <normaloff>:/images/icon-calculator.png</normaloff>:/images/icon-calculator.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>512</width>
+    <height>512</height>
+   </size>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
@@ -40,12 +56,102 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QLabel" name="label">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Чтобы приступить к решению задач, добавьте новые вкладки</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="margin">
+       <number>100</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabWidget
+{
+    background-color: #4740d2;
+    border: none;
+}
+QTabWidget::pane 
+{
+    border-top-right-radius: 10px;
+	background-color: white;
+}
+
+QTabBar
+{
+	background-color: #5049de;
+}
+QTabBar::tab
+{
+	border: none;
+  	padding: 10;
+  	font: 10px Bahnschrift SemiBold;
+  	color: white;
+}
+
+QTabBar::close-button 
+{
+    image: url(:/images/close-button-black.png);
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+}
+
+
+
+QTabBar::tab:first:selected
+{
+
+}
+
+
+QTabBar::tab:!selected
+{
+  	
+}
+
+
+QTabBar::tab:selected
+{
+    background-color: #ffffff;
+    color: #393939;
+}
+
+
+QTabBar::tab:!selected:hover
+{
+	
+}</string>
       </property>
       <property name="currentIndex">
        <number>-1</number>
@@ -104,6 +210,11 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources>
+  <include location="pictures.qrc"/>
+ </resources>
  <connections/>
 </ui>

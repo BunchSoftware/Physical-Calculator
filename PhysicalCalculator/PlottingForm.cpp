@@ -9,18 +9,18 @@ PlottingForm::PlottingForm(QWidget *parent) :
     ui(new Ui::PlottingForm)
 {
     ui->setupUi(this);
-    setWindowTitle("Physical Calculator: Построение графиков");
-    setWindowIcon(QIcon(":/picters/icon-calculator.png"));
 
     h=0.1;
     xBegin = -3;
-    xEnd =3+h;
+    xEnd = 3+h;
     ui->widget->xAxis->setRange(-6,6);
     ui->widget->yAxis->setRange(0,12);
     N=(xEnd-xBegin)/h+2;
 
     ui->widget->setInteraction(QCP::iRangeDrag);
     ui->widget->setInteraction(QCP::iRangeZoom);
+
+    on_comboBox_activated(0);
 }
 
 PlottingForm::~PlottingForm()
@@ -34,53 +34,52 @@ void PlottingForm::on_pushButton_clicked()
     connect(timer,SIGNAL(timeout()),this,SLOT(TimerSlot()));
     ui->widget->clearGraphs();
     timer->start(20);
-    X=xBegin;
+    X = xBegin;
     x.clear();
     y.clear();
 }
 
 void PlottingForm::TimerSlot()
 {
-        if (indexChoosePlottingForm==0){
-            float a = ui->lineEdit->text().toFloat();
-            float b = ui->lineEdit_2->text().toFloat();
-            float p = ui->lineEdit_3->text().toFloat();
-            if(time <= 20*N){
-                if (X<=xEnd)
-                {
-                    x.push_back(X);
-                    float c= (a*pow(X,2))+b*X+p;
-                    y.push_back(c);
-                    X+=h;
+  if (indexChoosePlottingForm == 0){
+      float a = ui->lineEdit->text().toFloat();
+      float b = ui->lineEdit_2->text().toFloat();
+      float c = ui->lineEdit_3->text().toFloat();
+      if(time <= 20*N){
+          if (X<=xEnd)
+          {
+              x.push_back(X);
+              float c= (a*pow(X,2))+b*X+c;
+              y.push_back(c);
+              X+=h;
 
-                 }
-                time+=20;
-            }
-            else{
-                time=0;
-                timer->stop();
-            }
-        }
-        else if (indexChoosePlottingForm==1){
-            float a = ui->lineEdit->text().toFloat();
-            float b = ui->lineEdit_2->text().toFloat();
-            if(time <= 20*N){
-                if (X<=xEnd)
-                {
-                    x.push_back(X);
-                    float c= a*X+b;
-                    y.push_back(c);
-                    X+=h;
+           }
+          time+=20;
+      }
+      else{
+          time=0;
+          timer->stop();
+      }
+  }
+  else if (indexChoosePlottingForm == 1){
+      float a = ui->lineEdit->text().toFloat();
+      float b = ui->lineEdit_2->text().toFloat();
+      if(time <= 20*N){
+          if (X<=xEnd)
+          {
+              x.push_back(X);
+              float c= a*X+b;
+              y.push_back(c);
+              X+=h;
 
-                 }
-                time+=20;
-            }
-            else{
-                time=0;
-                timer->stop();
-            }
-        }
-
+           }
+          time+=20;
+      }
+      else{
+          time=0;
+          timer->stop();
+      }
+  }
     ui->widget->addGraph();
     ui->widget->graph(0)->addData(x,y);
     ui->widget->replot();
@@ -89,28 +88,47 @@ void PlottingForm::TimerSlot()
 void PlottingForm::on_comboBox_activated(int index)
 {
     indexChoosePlottingForm = index;
-    if(index==0){
-        ui->lineEdit->show();
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit_3->setText("");
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-       }
-    if(index==1){
-        ui->lineEdit->setText("");
-        ui->lineEdit_2->setText("");
-        ui->lineEdit->show();
-        ui->lineEdit_2->show();
-        ui->lineEdit_3->hide();
-        ui->pushButton->show();
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->hide();
+    if(indexChoosePlottingForm == 0)
+    {
+        UpdateLableAndLineInWindow("a", "b", "c");
+    }
+    else if(indexChoosePlottingForm == 1)
+    {
+        UpdateLableAndLineInWindow("a", "b", "");
+    }
+}
+void PlottingForm::UpdateLableAndLineInWindow(QString textLabel1, QString textLabel2, QString textLabel3){
+    if(textLabel1.isEmpty())
+    {
+      ui->lineEdit->hide();
+      ui->label->hide();
+    }
+    else
+    {
+      ui->label->show();
+      ui->label->setText(textLabel1);
+      ui->lineEdit->show();
+    }
+    if(textLabel2.isEmpty())
+    {
+      ui->lineEdit_2->hide();
+      ui->label_2->hide();
+    }
+    else
+    {
+      ui->label_2->show();
+      ui->label_2->setText(textLabel2);
+      ui->lineEdit_2->show();
+    }
+    if(textLabel3.isEmpty())
+    {
+      ui->lineEdit_3->hide();
+      ui->label_3->hide();
+    }
+    else
+    {
+      ui->label_3->show();
+      ui->label_3->setText(textLabel3);
+      ui->lineEdit_3->show();
     }
 }
