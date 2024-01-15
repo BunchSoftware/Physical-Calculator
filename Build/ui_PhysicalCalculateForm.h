@@ -76,7 +76,7 @@ public:
     {
         if (PhysicalCalculateForm->objectName().isEmpty())
             PhysicalCalculateForm->setObjectName(QString::fromUtf8("PhysicalCalculateForm"));
-        PhysicalCalculateForm->resize(2244, 1221);
+        PhysicalCalculateForm->resize(2144, 1124);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

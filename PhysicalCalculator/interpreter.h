@@ -12,7 +12,8 @@ namespace Interpreter {
 
 // Операторы для математических выражений
 enum class Operator {
-    Plus, Minus, Mul, Div, LParen, RParen, UPlus, UMinus,
+    Plus, Minus, Mul, Div, LParen, RParen, UPlus, UMinus, Procent,
+    Exponentiation, Extraction, Factorial, Sin, Cos, Tan, Log, Pi, E,
 };
 
 // Inline - ключевое слово для встраивания функции в коде. Ускоряет работу кода, но не всегда
@@ -24,7 +25,13 @@ inline std::wstring ToString(const Operator &op) {
             { Operator::Plus, L"+" }, { Operator::Minus, L"-" },
             { Operator::Mul, L"*" }, { Operator::Div, L"/" },
             { Operator::LParen, L"(" }, { Operator::RParen, L")" },
-            { Operator::UPlus, L"u+" }, { Operator::UMinus, L"u-" } };
+            { Operator::UPlus, L"u+" }, { Operator::UMinus, L"u-" },
+            { Operator::Procent, L"%" }, { Operator:: Exponentiation, L"^" },
+            { Operator::Extraction, L"sqrt" }, { Operator::Factorial, L"!" },
+            { Operator::Sin, L"sin" }, { Operator::Cos, L"cos" },
+            { Operator::Tan, L"tan" }, { Operator::Log, L"log" },
+            { Operator::Pi, L"π" }, { Operator::E, L"e" },
+    };
     return opmap.at(op);
 }
 
@@ -119,7 +126,7 @@ template<typename T> struct GenericToken : TokenConcept {
 
 using Detail::Token;
 
-// Создание динамическо массива Tokens
+// Создание динамического массива Tokens
 typedef std::vector<Token> Tokens;
 
 // Создание токена из оператора
@@ -188,12 +195,17 @@ private:
         AddToResult(wcstod(m_current, const_cast<wchar_t **>(&m_current)));
     }
 
-    // Преобразование символа в оператор
+    // Набор операторов
     const static auto &CharToOperatorMap() {
         static const std::unordered_map<wchar_t, Operator> opmap{
                 { L'+', Operator::Plus }, { L'-', Operator::Minus },
                 { L'*', Operator::Mul }, { L'/', Operator::Div },
                 { L'(', Operator::LParen }, { L')', Operator::RParen },
+                { L'%', Operator::Procent}, { L'^',  Operator:: Exponentiation},
+                { L'sqrt', Operator::Extraction }, { L'!', Operator::Factorial},
+                { L'sin', Operator::Sin }, { L'cos', Operator::Cos },
+                { L'tan',  Operator::Tan }, { L'log', Operator::Log },
+                { L'π', Operator::Pi }, { L'e',Operator::E},
         };
         return opmap;
     }
