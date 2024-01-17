@@ -131,7 +131,7 @@ void PhysicalCalculateForm::Calclulate()
       {
           for (int i = 0; i < formulExpression.count(); i++)
           {
-              QString expression = formulExpression[i].toString();
+                 QString expression = formulExpression[i].toString();
                  for (int j = 0; j < value.size(); j++)
                  {
                      if(symbolFormul[j].toString().isEmpty())
@@ -139,7 +139,11 @@ void PhysicalCalculateForm::Calclulate()
                      else
                        expression.replace(symbolFormul[j].toString(), QString::number(value[j]));
                  }
-                 result.push_back(InterpreteExperssion(expression.toStdWString()));
+                 try {
+                    result.push_back(InterpreteExperssion(expression.toStdWString()));
+                 } catch (...) {
+
+                 }
           }
       }
       else

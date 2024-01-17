@@ -24,6 +24,24 @@ private slots:
 
   void on_plotting_triggered();
 
+  void on_exit_triggered();
+
+  void on_math_parser_triggered();
+
+  void on_familiarization_triggered();
+
+  void on_close_all_tabs_triggered();
+
+  void on_report_problem_triggered();
+
+  void on_suggest_feature_triggered();
+
+  void on_get_review_triggered();
+
+  void on_about_documentation_triggered();
+
+  void on_about_programm_triggered();
+
 private:
   Ui::MainWindow *ui;
 };

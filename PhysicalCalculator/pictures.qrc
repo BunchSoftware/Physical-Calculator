@@ -1,9 +1,5 @@
 <RCC>
-    <qresource prefix="/new/prefix2"/>
-    <qresource prefix="/new/prefix1"/>
     <qresource prefix="/">
-        <file>C:/Users/Den4o/Downloads/Telegram Desktop/Combinear.qss</file>
-        <file>Combinear.qss</file>
         <file>source.json</file>
         <file>images/absolute_temperature.png</file>
         <file>images/amount_heat_released.png</file>
@@ -151,5 +147,43 @@
         <file>images/radiobutton2.svg</file>
         <file>images/radiobutton3.svg</file>
         <file>images/tusur_logo_main_color_cmyk.png</file>
+        <file>images/logotype.png</file>
+        <file>../Documentation/images/absolute_temperature.png</file>
+        <file>../Documentation/images/amount_heat_released.png</file>
+        <file>../Documentation/images/amount_substance.png</file>
+        <file>../Documentation/images/ampere_power.png</file>
+        <file>../Documentation/images/archimedes_law.png</file>
+        <file>../Documentation/images/average_speed.png</file>
+        <file>../Documentation/images/body_melting.png</file>
+        <file>../Documentation/images/conductor_resistivity.png</file>
+        <file>../Documentation/images/coordinate_time.png</file>
+        <file>../Documentation/images/coulomb_force.png</file>
+        <file>../Documentation/images/force_gravity.png</file>
+        <file>../Documentation/images/free_path.png</file>
+        <file>../Documentation/images/fuel_combustion.png</file>
+        <file>../Documentation/images/half_life.png</file>
+        <file>../Documentation/images/heat_vaporization.png</file>
+        <file>../Documentation/images/horizontal_flight_range.png</file>
+        <file>../Documentation/images/interference_max.png</file>
+        <file>../Documentation/images/interference_min.png</file>
+        <file>../Documentation/images/kinetic_energy.png</file>
+        <file>../Documentation/images/logotype.png</file>
+        <file>../Documentation/images/lorentz_force.png</file>
+        <file>../Documentation/images/molecular_concentration.png</file>
+        <file>../Documentation/images/newton_second_law.png</file>
+        <file>../Documentation/images/ohm_law.png</file>
+        <file>../Documentation/images/oscillation_frequency.png</file>
+        <file>../Documentation/images/potential_energy.png</file>
+        <file>../Documentation/images/relativity_mass.png</file>
+        <file>../Documentation/images/silatoka.png</file>
+        <file>../Documentation/images/speed_light.png</file>
+        <file>../Documentation/images/spring_pendulum.png</file>
+        <file>../Documentation/images/thomson_law.png</file>
+        <file>../Documentation/images/wavelength.png</file>
+        <file>../Documentation/ru/getting-started.md</file>
+        <file>../Documentation/ru/health-project.md</file>
+        <file>../Documentation/ru/index.md</file>
+        <file>../Documentation/ru/support.md</file>
+        <file>../Documentation/ru/base-physic.md</file>
     </qresource>
 </RCC>

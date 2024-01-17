@@ -189,24 +189,120 @@ QTabBar::tab:!selected:hover
      <addaction name="calculate"/>
      <addaction name="physical_calculate"/>
      <addaction name="plotting"/>
+     <addaction name="math_parser"/>
+     <addaction name="familiarization"/>
     </widget>
     <addaction name="menu_2"/>
+    <addaction name="close_all_tabs"/>
    </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <widget class="QMenu" name="menu_4">
+     <property name="title">
+      <string>Отправить отзыв</string>
+     </property>
+     <addaction name="report_problem"/>
+     <addaction name="suggest_feature"/>
+     <addaction name="get_review"/>
+    </widget>
+    <addaction name="menu_4"/>
+    <addaction name="about_documentation"/>
+    <addaction name="about_programm"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="exit"/>
+   </widget>
+   <addaction name="menu_5"/>
    <addaction name="menu"/>
+   <addaction name="menu_3"/>
   </widget>
   <action name="calculate">
    <property name="text">
     <string>Калькулятор</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
    </property>
   </action>
   <action name="physical_calculate">
    <property name="text">
     <string>Физический калькулятор</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
   </action>
   <action name="plotting">
    <property name="text">
     <string>Построение графиков</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+3</string>
+   </property>
+  </action>
+  <action name="about_programm">
+   <property name="text">
+    <string>О программе Physcial Calculator</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F1</string>
+   </property>
+  </action>
+  <action name="about_documentation">
+   <property name="text">
+    <string>Ознакомление с документацией</string>
+   </property>
+  </action>
+  <action name="get_review">
+   <property name="text">
+    <string>Мой отзыв</string>
+   </property>
+  </action>
+  <action name="report_problem">
+   <property name="text">
+    <string>Сообщить о проблеме</string>
+   </property>
+  </action>
+  <action name="suggest_feature">
+   <property name="text">
+    <string>Предложить функцию</string>
+   </property>
+  </action>
+  <action name="exit">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="close_all_tabs">
+   <property name="text">
+    <string>Закрыть все вкладки</string>
+   </property>
+  </action>
+  <action name="math_parser">
+   <property name="text">
+    <string>Математический парсер</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
+   </property>
+  </action>
+  <action name="familiarization">
+   <property name="text">
+    <string>Ознакомление с программой</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+5</string>
    </property>
   </action>
  </widget>

@@ -34,31 +34,44 @@ void CalculateForm::operations()
     QPushButton *button= (QPushButton *)sender();
     double result = 0;
 
+    if(button->text() == "Del")
+    {
+         QString text = ui->expression->text();
+         text.chop(1);
+         ui->expression->setText(text);
+
+         if(ui->expression->text().isEmpty())
+           ui->result->setText("");
+    }
+    else if(button->text() == "1/x")
+      ui->expression->setText("1/" + ui->expression->text());
+    else if(button->text() == "sqrt")
+      ui->expression->setText(ui->expression->text() + "sqrt(");
+    else
+    {
+        ui->expression->setText(ui->expression->text() + button->text());
+    }
+
+    try {
+       result = InterpreteExperssion(ui->expression->text().toStdWString());
+       ui->result->setText(QString::number(result));
+    }
+    catch (...)
+    {
+      ui->result->setText("");
+    }
+
     if(button->text() == "=")
     {
-        ui->result->setText("");
-        ui->expression->setText(QString::number(result));
+         ui->expression->setText(QString::number(result));
+         ui->result->setText("");
     }
+
     if(button->text() == "C")
     {
         ui->result->setText("");
         ui->expression->setText("");
         result = 0;
-    }
-    if(button->text() == "Del")
-    {
-         ui->expression->text().chop(1);
-    }
-    else
-    {
-        try {
-          result = InterpreteExperssion(ui->expression->text().toStdWString());
-          ui->result->setText(QString::number(result));
-        }
-        catch (...)
-        {
-          ui->result->setText("Ошибка в выражении");
-        }
     }
 }
 

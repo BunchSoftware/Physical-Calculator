@@ -29,7 +29,7 @@
    <string notr="true">QPushButton {
   color: white; 
   border: 1px solid gray;
-  font-size: 30px;
+  font-size: 25px;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -92,7 +92,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>15</pointsize>
+           <pointsize>30</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -100,7 +100,7 @@
 color: rgb(136, 136, 136);</string>
          </property>
          <property name="text">
-          <string>2+2</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -114,14 +114,14 @@ color: rgb(136, 136, 136);</string>
          </property>
          <property name="font">
           <font>
-           <pointsize>30</pointsize>
+           <pointsize>25</pointsize>
           </font>
          </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
          <property name="text">
-          <string>4</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -262,7 +262,7 @@ QPushButton:pressed {
 }</string>
          </property>
          <property name="text">
-          <string>%</string>
+          <string>(</string>
          </property>
         </widget>
        </item>
@@ -329,7 +329,7 @@ QPushButton:pressed {
 }</string>
          </property>
          <property name="text">
-          <string>X^2</string>
+          <string>^</string>
          </property>
         </widget>
        </item>
@@ -784,7 +784,7 @@ QPushButton:pressed {
 }</string>
          </property>
          <property name="text">
-          <string>+/-</string>
+          <string>)</string>
          </property>
          <property name="iconSize">
           <size>
@@ -824,7 +824,7 @@ QPushButton:pressed {
 }</string>
          </property>
          <property name="text">
-          <string>√(x)</string>
+          <string>sqrt</string>
          </property>
         </widget>
        </item>

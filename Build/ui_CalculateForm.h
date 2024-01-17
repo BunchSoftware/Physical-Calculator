@@ -70,7 +70,7 @@ public:
         CalculateForm->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
-"  font-size: 30px;\n"
+"  font-size: 25px;\n"
 "}"));
         centralwidget = new QWidget(CalculateForm);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -95,7 +95,7 @@ public:
         sizePolicy.setHeightForWidth(expression->sizePolicy().hasHeightForWidth());
         expression->setSizePolicy(sizePolicy);
         QFont font;
-        font.setPointSize(15);
+        font.setPointSize(30);
         expression->setFont(font);
         expression->setStyleSheet(QString::fromUtf8("\n"
 "color: rgb(136, 136, 136);"));
@@ -107,7 +107,7 @@ public:
         sizePolicy.setHeightForWidth(result->sizePolicy().hasHeightForWidth());
         result->setSizePolicy(sizePolicy);
         QFont font1;
-        font1.setPointSize(30);
+        font1.setPointSize(25);
         result->setFont(font1);
         result->setStyleSheet(QString::fromUtf8(""));
 
@@ -519,13 +519,13 @@ public:
     void retranslateUi(QMainWindow *CalculateForm)
     {
         CalculateForm->setWindowTitle(QCoreApplication::translate("CalculateForm", "MainWindow", nullptr));
-        expression->setText(QCoreApplication::translate("CalculateForm", "2+2", nullptr));
-        result->setText(QCoreApplication::translate("CalculateForm", "4", nullptr));
+        expression->setText(QString());
+        result->setText(QString());
         number_1->setText(QCoreApplication::translate("CalculateForm", "1", nullptr));
         equals->setText(QCoreApplication::translate("CalculateForm", "=", nullptr));
-        percent->setText(QCoreApplication::translate("CalculateForm", "%", nullptr));
+        percent->setText(QCoreApplication::translate("CalculateForm", "(", nullptr));
         number_4->setText(QCoreApplication::translate("CalculateForm", "4", nullptr));
-        step->setText(QCoreApplication::translate("CalculateForm", "X^2", nullptr));
+        step->setText(QCoreApplication::translate("CalculateForm", "^", nullptr));
         division->setText(QCoreApplication::translate("CalculateForm", "/", nullptr));
         number_2->setText(QCoreApplication::translate("CalculateForm", "2", nullptr));
         number_5->setText(QCoreApplication::translate("CalculateForm", "5", nullptr));
@@ -538,8 +538,8 @@ public:
         dot->setText(QCoreApplication::translate("CalculateForm", ".", nullptr));
         minus->setText(QCoreApplication::translate("CalculateForm", "-", nullptr));
         multiplication->setText(QCoreApplication::translate("CalculateForm", "*", nullptr));
-        plus_minus->setText(QCoreApplication::translate("CalculateForm", "+/-", nullptr));
-        sqrt->setText(QCoreApplication::translate("CalculateForm", "\342\210\232(x)", nullptr));
+        plus_minus->setText(QCoreApplication::translate("CalculateForm", ")", nullptr));
+        sqrt->setText(QCoreApplication::translate("CalculateForm", "sqrt", nullptr));
         number_6->setText(QCoreApplication::translate("CalculateForm", "6", nullptr));
         number_7->setText(QCoreApplication::translate("CalculateForm", "7", nullptr));
         plus->setText(QCoreApplication::translate("CalculateForm", "+", nullptr));

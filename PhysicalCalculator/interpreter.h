@@ -2,6 +2,7 @@
 #define INTERPRETER_H
 
 #pragma once;
+#include <math.h>
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -18,7 +19,6 @@ enum class Operator {
 
 // Inline - ключевое слово для встраивания функции в коде. Ускоряет работу кода, но не всегда
 
-
 // Преобразование из оператора в wstring - широкая строка, строковый класс для широких символов
 inline std::wstring ToString(const Operator &op) {
     static const std::unordered_map<Operator, std::wstring> opmap{
@@ -27,9 +27,9 @@ inline std::wstring ToString(const Operator &op) {
             { Operator::LParen, L"(" }, { Operator::RParen, L")" },
             { Operator::UPlus, L"u+" }, { Operator::UMinus, L"u-" },
             { Operator::Procent, L"%" }, { Operator:: Exponentiation, L"^" },
-            { Operator::Extraction, L"sqrt" }, { Operator::Factorial, L"!" },
-            { Operator::Sin, L"sin" }, { Operator::Cos, L"cos" },
-            { Operator::Tan, L"tan" }, { Operator::Log, L"log" },
+            { Operator::Extraction, L"sqrt(" }, { Operator::Factorial, L"!" },
+            { Operator::Sin, L"sin[" }, { Operator::Cos, L"cos(" },
+            { Operator::Tan, L"tan(" }, { Operator::Log, L"log(" },
             { Operator::Pi, L"π" }, { Operator::E, L"e" },
     };
     return opmap.at(op);
@@ -171,17 +171,16 @@ public:
     void Tokenize(const std::wstring &expression) {
         for(m_current = expression.c_str(); *m_current;) {
             // Является ли символ цифрой
-            if(IsNumber()) {
+            if(IsNumber())
                 ScanNumber();
-            }
             // Является ли символ оператором
-            else if(IsOperator()) {
+            else if(IsOperator())
                 ScanOperator();
-            }
             // Пропускаем, если не является не тем не другим
-            else {
+            else
+              {
                 ++m_current;
-            }
+              }
         }
     }
 
@@ -196,32 +195,36 @@ private:
     }
 
     // Набор операторов
-    const static auto &CharToOperatorMap() {
-        static const std::unordered_map<wchar_t, Operator> opmap{
-                { L'+', Operator::Plus }, { L'-', Operator::Minus },
-                { L'*', Operator::Mul }, { L'/', Operator::Div },
-                { L'(', Operator::LParen }, { L')', Operator::RParen },
-                { L'%', Operator::Procent}, { L'^',  Operator:: Exponentiation},
-                { L'sqrt', Operator::Extraction }, { L'!', Operator::Factorial},
-                { L'sin', Operator::Sin }, { L'cos', Operator::Cos },
-                { L'tan',  Operator::Tan }, { L'log', Operator::Log },
-                { L'π', Operator::Pi }, { L'e',Operator::E},
-        };
+    static auto CharToOperatorMap() {
+      static const std::unordered_map<std::wstring, Operator> opmap{
+              {  L"+" , Operator::Plus}, { L"-", Operator::Minus},
+              {  L"*" , Operator::Mul}, { L"/", Operator::Div},
+              {  L"(" , Operator::LParen}, { L")", Operator::RParen},
+              {  L"u+", Operator::UPlus}, { L"u-", Operator::UMinus},
+              {  L"%" ,  Operator::Procent }, { L"^", Operator:: Exponentiation},
+              {  L"sqrt(", Operator::Extraction}, { L"!", Operator::Factorial },
+              {  L"sin(", Operator::Sin }, { L"cos(", Operator::Cos },
+              {  L"tan(", Operator::Tan }, { L"log(", Operator::Log },
+              {  L"π", Operator::Pi }, { L"e", Operator::E },
+      };
         return opmap;
     }
 
     // Является ли символ оператором
-    bool IsOperator() const {
-        return CharToOperatorMap().find(*m_current) != CharToOperatorMap().end();
+    bool IsOperator(){
+        w_current.push_back(*m_current);
+        return CharToOperatorMap().find(w_current) != CharToOperatorMap().end();
     }
 
     // Поиск и обработка операторов
     void ScanOperator() {
-        AddToResult(CharToOperatorMap().at(*m_current));
+        AddToResult(CharToOperatorMap().at(w_current));
+        w_current.clear();
         ++m_current;
     }
 
     const wchar_t *m_current = nullptr;
+    std::wstring w_current;
 };
 
 // Пометка, что оператор унарный
@@ -266,8 +269,13 @@ namespace Parser {
 
 // Определение приоритетов в математическом выражении
 template<typename T> int PrecedenceOf(const T &token) {
-    if(token == Operator::UMinus) return 2;
-    if(token == Operator::Mul || token == Operator::Div) return 1;
+    if(token == Operator::UMinus) return 6;
+    if(token == Operator::Pi || token == Operator::E) return 5;
+    if(token == Operator::Exponentiation || token == Operator::Extraction) return 2;
+    if(token == Operator::Mul || token == Operator::Div) return 4;
+    if(token == Operator::Sin || token == Operator::Cos || token == Operator::Tan || token == Operator::Log) return 3;
+    if(token == Operator::Exponentiation || token == Operator::Extraction) return 2;
+    if(token == Operator::Procent) return 1;
     return 0;
 }
 
@@ -282,7 +290,7 @@ public:
     }
 
 private:
-    // Определение действия
+    // Определение унарных действий
     void Visit(Operator op) override {
         switch(op) {
             case Operator::UPlus:
@@ -292,9 +300,22 @@ private:
                 PushCurrentToStack(op);
                 break;
             case Operator::RParen:
-                PopToOutputUntil([this]() { return LeftParenOnTop(); });
-                PopLeftParen();
-                break;
+                  if(UnaryOnTop() && isUnary == false)
+                  {
+                     isUnary = true;
+                     break;
+                  }
+                  else if(m_stack.back() == Operator::RParen)
+                  {
+                      isUnary = true;
+                      break;
+                  }
+                  else
+                  {
+                    PopToOutputUntil([this]() { return LeftParenOnTop(); });
+                    PopLeftParen();
+                    break;
+                  }
             default:
                 PopToOutputUntil([this, op]() { return LeftParenOnTop() || OperatorWithLessPrecedenceOnTop(op); });
                 PushCurrentToStack(op);
@@ -327,6 +348,16 @@ private:
     bool LeftParenOnTop() const {
         return m_stack.back() == Operator::LParen;
     }
+    bool UnaryOnTop() const {
+        if(std::find(m_stack.begin(), m_stack.end(), Operator::Sin) != m_stack.end() ||
+           std::find(m_stack.begin(), m_stack.end(), Operator::Cos) != m_stack.end() ||
+           std::find(m_stack.begin(), m_stack.end(), Operator::Tan) != m_stack.end() ||
+           std::find(m_stack.begin(), m_stack.end(), Operator::Log) != m_stack.end() ||
+           std::find(m_stack.begin(), m_stack.end(), Operator::Extraction) != m_stack.end())
+           return true;
+        else
+          return false;
+    }
     // Проверка до тех пор
     template <typename T>
     void PopToOutputUntil(T whenToEnd) {
@@ -336,6 +367,7 @@ private:
         }
     }
 
+    bool isUnary = false;
     Tokens m_stack;
 };
 }
@@ -363,7 +395,7 @@ private:
 
     template<typename T> static auto MakeEvaluator(const size_t arity, T function) {
         return [=](OpStack &stack) {
-            if(stack.size() < arity) throw std::logic_error("Not enough arguments in stack.");
+            if(stack.size() < arity) throw std::logic_error("Недостаточно аргументов в стеке.");
             Args argumentsOnStack = stack.cend() - arity;
             double result = function(argumentsOnStack);
             stack.erase(argumentsOnStack, stack.cend());
@@ -377,7 +409,15 @@ private:
                 { Operator::Minus, MakeEvaluator(2, [=](Args a) { return a[0] - a[1]; }) },
                 { Operator::Mul, MakeEvaluator(2, [=](Args a) { return a[0] * a[1]; }) },
                 { Operator::Div, MakeEvaluator(2, [=](Args a) { return a[0] / a[1]; }) },
-                { Operator::UMinus, MakeEvaluator(1, [=](Args a) { return -a[0]; }) }
+                { Operator::Procent, MakeEvaluator(1, [=](Args a) { return a[0]/100; }) },
+                { Operator::Exponentiation, MakeEvaluator(2, [=](Args a) { return pow(a[0], a[1]); }) },
+                { Operator::Extraction, MakeEvaluator(1, [=](Args a) { return sqrt(a[0]); }) },
+                { Operator::Sin, MakeEvaluator(1, [=](Args a) { return sin(a[0]); }) },
+                { Operator::Cos, MakeEvaluator(1, [=](Args a) { return cos(a[0]); }) },
+                { Operator::Tan, MakeEvaluator(1, [=](Args a) { return tan(a[0]); }) },
+                { Operator::Log, MakeEvaluator(1, [=](Args a) { return log(a[0]); }) },
+                { Operator::Pi, MakeEvaluator(0, [=](Args a) { return 3.14159265358979323846; }) },
+                { Operator::E, MakeEvaluator(0, [=](Args a) { return  2.71828182845904523536; }) }
         };
         evaluators.at(op)(m_stack);
     }

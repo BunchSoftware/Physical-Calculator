@@ -21,10 +21,11 @@ parser::~parser()
 void parser::on_pushButton_clicked()
 {
   try {
-    QString text = ui->line->text();
-    double result = InterpreteExperssion(text.toStdWString());
-    ui->result->setText(QString::number(result));
-  } catch (...) {
+    std::wstring text = ui->line->text().toStdWString();
+    double result = InterpreteExperssion(text);
+    ui->result->setText("Результат: " + QString::number(result));
+  }
+  catch (...) {
     ui->result->setText("Ошибка в выражении");
   }
 }

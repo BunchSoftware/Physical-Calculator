@@ -3,6 +3,8 @@ release/ErrorForm.o
 release/MainWindow.o
 release/PhysicalCalculateForm.o
 release/PlottingForm.o
+release/aboutwindow.o
+release/familiarization.o
 release/main.o
 release/parser.o
 release/qcustomplot.o
@@ -12,5 +14,7 @@ release/moc_ErrorForm.o
 release/moc_MainWindow.o
 release/moc_PhysicalCalculateForm.o
 release/moc_PlottingForm.o
+release/moc_aboutwindow.o
+release/moc_familiarization.o
 release/moc_parser.o
 release/moc_qcustomplot.o

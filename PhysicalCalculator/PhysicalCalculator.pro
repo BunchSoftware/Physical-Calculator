@@ -14,6 +14,8 @@ SOURCES += \
     MainWindow.cpp \
     PhysicalCalculateForm.cpp \
     PlottingForm.cpp \
+    aboutwindow.cpp \
+    familiarization.cpp \
     main.cpp \
     parser.cpp \
     qcustomplot.cpp
@@ -24,8 +26,11 @@ HEADERS += \
     MainWindow.h \
     PhysicalCalculateForm.h \
     PlottingForm.h \
+    aboutwindow.h \
+    familiarization.h \
     interpreter.h \
     parser.h \
+    physicInterpreter.h \
     qcustomplot.h
 
 FORMS += \
@@ -34,6 +39,8 @@ FORMS += \
     MainWindow.ui \
     PhysicalCalculateForm.ui \
     PlottingForm.ui \
+    aboutwindow.ui \
+    familiarization.ui \
     parser.ui
 
 # Default rules for deployment.

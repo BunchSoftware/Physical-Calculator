@@ -154,7 +154,7 @@ public:
         font1.setWeight(50);
         font1.setKerning(true);
         Description->setFont(font1);
-        Description->setStyleSheet(QString::fromUtf8("font: 20px;"));
+        Description->setStyleSheet(QString::fromUtf8("font: 18px;"));
         Description->setTextFormat(Qt::AutoText);
         Description->setScaledContents(true);
         Description->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
