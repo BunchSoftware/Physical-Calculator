@@ -185,5 +185,9 @@
         <file>../Documentation/ru/index.md</file>
         <file>../Documentation/ru/support.md</file>
         <file>../Documentation/ru/base-physic.md</file>
+        <file>../Documentation/ru/math-parser.md</file>
+        <file>../Documentation/ru/physical-calculator-manual-tests.md</file>
+        <file>../Documentation/ru/physic-parser.md</file>
+        <file>../Documentation/ru/roadmap.md</file>
     </qresource>
 </RCC>

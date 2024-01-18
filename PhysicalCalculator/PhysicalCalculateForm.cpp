@@ -124,7 +124,7 @@ void PhysicalCalculateForm::Calclulate()
           }
           else
           {
-             value[i] = mathValueSymbolFormul[i].toDouble();
+             value.push_back(mathValueSymbolFormul[i].toDouble());
           }
       }
       if(formulExpression.count() == symbolFormul.count())
@@ -151,6 +151,10 @@ void PhysicalCalculateForm::Calclulate()
           throw std::logic_error("Количество переменных не равно количесту значений переменных. Исправьте JSON файл");
       }
   }
+  else
+    {
+      throw std::logic_error("Индекс формулы больше, чем иммееться формул");
+    }
   CheckLineEditIsEmpty(result);
 }
 void PhysicalCalculateForm::UpdateLableAndLineInWindow(QJsonArray arrayData){
