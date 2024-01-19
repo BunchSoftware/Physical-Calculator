@@ -327,7 +327,7 @@ private:
     }
     // Проверка на закрывающиюся скобку
     bool StackHasNoOperators() const {
-        if(m_stack.back() == Operator::LParen) throw std::logic_error("Закрывающая скобка не найдена..");
+        if(m_stack.back() == Operator::LParen) throw std::logic_error("Закрывающая скобка не найдена.");
         return false;
     }
     // Добавление оператора в текущий массив действий
