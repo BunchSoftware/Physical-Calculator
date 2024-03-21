@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>MS Shell Dlg 2</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Physical Calculator</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../source/pictures.qrc">
+    <normaloff>:/images/icon-calculator.png</normaloff>:/images/icon-calculator.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>512</width>
+    <height>512</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Чтобы приступить к решению задач, добавьте новые вкладки&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="margin">
+       <number>100</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabWidget
+{
+    background-color: #4740d2;
+    border: none;
+}
+QTabWidget::pane 
+{
+    border-top-right-radius: 10px;
+	background-color: white;
+}
+
+QTabBar
+{
+	background-color: #5049de;
+}
+QTabBar::tab
+{
+	border: none;
+  	padding: 10;
+  	font: 10px Bahnschrift SemiBold;
+  	color: white;
+}
+
+QTabBar::close-button 
+{
+    image: url(:/images/close-button-black.png);
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+}
+
+
+
+QTabBar::tab:first:selected
+{
+
+}
+
+
+QTabBar::tab:!selected
+{
+  	
+}
+
+
+QTabBar::tab:selected
+{
+    background-color: #ffffff;
+    color: #393939;
+}
+
+
+QTabBar::tab:!selected:hover
+{
+	
+}</string>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Вкладки</string>
+    </property>
+    <widget class="QMenu" name="menu_2">
+     <property name="title">
+      <string>Добавить вкладку</string>
+     </property>
+     <addaction name="calculate"/>
+     <addaction name="physical_calculate"/>
+     <addaction name="plotting"/>
+     <addaction name="math_parser"/>
+     <addaction name="familiarization"/>
+    </widget>
+    <addaction name="menu_2"/>
+    <addaction name="close_all_tabs"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <widget class="QMenu" name="menu_4">
+     <property name="title">
+      <string>Отправить отзыв</string>
+     </property>
+     <addaction name="report_problem"/>
+     <addaction name="suggest_feature"/>
+     <addaction name="get_review"/>
+    </widget>
+    <addaction name="menu_4"/>
+    <addaction name="about_documentation"/>
+    <addaction name="about_programm"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="create_project"/>
+    <addaction name="open_project"/>
+    <addaction name="last_project"/>
+    <addaction name="save_project"/>
+    <addaction name="close_project"/>
+    <addaction name="exit"/>
+   </widget>
+   <addaction name="menu_5"/>
+   <addaction name="menu"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <action name="calculate">
+   <property name="text">
+    <string>Калькулятор</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="physical_calculate">
+   <property name="text">
+    <string>Физический калькулятор</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="plotting">
+   <property name="text">
+    <string>Построение графиков</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+3</string>
+   </property>
+  </action>
+  <action name="about_programm">
+   <property name="text">
+    <string>О программе Physcial Calculator</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F1</string>
+   </property>
+  </action>
+  <action name="about_documentation">
+   <property name="text">
+    <string>Ознакомление с документацией</string>
+   </property>
+  </action>
+  <action name="get_review">
+   <property name="text">
+    <string>Мой отзыв</string>
+   </property>
+  </action>
+  <action name="report_problem">
+   <property name="text">
+    <string>Сообщить о проблеме</string>
+   </property>
+  </action>
+  <action name="suggest_feature">
+   <property name="text">
+    <string>Предложить функцию</string>
+   </property>
+  </action>
+  <action name="exit">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="close_all_tabs">
+   <property name="text">
+    <string>Закрыть все вкладки</string>
+   </property>
+  </action>
+  <action name="math_parser">
+   <property name="text">
+    <string>Математический парсер</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
+   </property>
+  </action>
+  <action name="familiarization">
+   <property name="text">
+    <string>Ознакомление с программой</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+5</string>
+   </property>
+  </action>
+  <action name="create_project">
+   <property name="text">
+    <string>Создать проект </string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="close_project">
+   <property name="text">
+    <string>Закрыть проект</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+W</string>
+   </property>
+  </action>
+  <action name="save_project">
+   <property name="text">
+    <string>Сохранить проект</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="open_project">
+   <property name="text">
+    <string>Открыть проект</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="last_project">
+   <property name="text">
+    <string>Недавние проекты</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../source/pictures.qrc"/>
+ </resources>
+ <connections/>
+</ui>

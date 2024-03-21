@@ -1,19 +1,28 @@
-#include "CalculateForm.h"
-#include "PhysicalCalculateForm.h"
-#include "PlottingForm.h"
 #include <QApplication>
 #include <QFile>
+#include <forms/mainWindow.h>
+#include "QQmlApplicationEngine"
+#include "QGuiApplication"
+#include "forms/physicalCalculateForm.h"
+#include "forms/Parser.h"
 
 int main(int argc, char **argv)
 {
-    QApplication a(argc, argv);
+  QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-//    QFile file(":/Combinear.qss");
-//    file.open(QFile::ReadOnly);
-//    QString styleSheet { QLatin1String(file.readAll()) };
-//    a.setStyleSheet(styleSheet);
+  QGuiApplication app(argc, argv);
 
-    MainWindow w;
-    w.show();
-    return a.exec();
+  qmlRegisterType<parser>("Forms", 1, 0, "Parser");
+
+  QQmlApplicationEngine engine;
+  const QUrl url(QStringLiteral("qrc:/mainWindow.qml"));
+  QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                   &app, [url](QObject *obj, const QUrl &objUrl) {
+    if (!obj && url == objUrl)
+      QCoreApplication::exit(-1);
+  }, Qt::QueuedConnection);
+  engine.load(url);
+
+    app.setWindowIcon(QIcon("qrc:/../../Documentation/images/logotype.png"));
+    return app.exec();
 }
