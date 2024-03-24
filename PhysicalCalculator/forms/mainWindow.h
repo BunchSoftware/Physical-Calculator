@@ -3,57 +3,24 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-  class MainWindow;
-}
-
-class MainWindow : public QMainWindow
+class MainWindow : public QObject
 {
   Q_OBJECT
 
 public:
-  explicit MainWindow(QWidget *parent = nullptr);
-  ~MainWindow();
-
-private slots:
-  void on_tabWidget_tabCloseRequested(int index);
-
-  void on_calculate_triggered();
-
-  void on_physical_calculate_triggered();
-
-  void on_plotting_triggered();
-
-  void on_exit_triggered();
-
-  void on_math_parser_triggered();
-
-  void on_familiarization_triggered();
-
-  void on_close_all_tabs_triggered();
-
-  void on_report_problem_triggered();
-
-  void on_suggest_feature_triggered();
-
-  void on_get_review_triggered();
-
-  void on_about_documentation_triggered();
-
-  void on_about_programm_triggered();
-
-  void on_last_project_triggered();
-
-  void on_open_project_triggered();
-
-  void on_save_project_triggered();
-
-  void on_close_project_triggered();
-
-  void on_create_project_triggered();
+  explicit MainWindow(QObject *parent = nullptr);
+  Q_INVOKABLE void onReportProblemTriggered();
+  Q_INVOKABLE void onSuggestFeatureTriggered();
+  Q_INVOKABLE void onGetReviewTriggered();
+  Q_INVOKABLE void onAboutDocumentationTriggered();
+  Q_INVOKABLE void onAboutProgrammTriggered();
+  Q_INVOKABLE void onLastProjectTriggered();
+  Q_INVOKABLE void onOpenProjectTriggered();
+  Q_INVOKABLE void onSaveProjectTriggered();
+  Q_INVOKABLE void onCloseProjectTriggered();
+  Q_INVOKABLE void onCreateProjectTriggered();
 
 private:
-  Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H

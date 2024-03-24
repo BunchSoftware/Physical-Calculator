@@ -5,22 +5,29 @@
 #include "physicalCalculateForm.h"
 #include "mainWindow.h"
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class CalculateForm; }
-QT_END_NAMESPACE
-
-class CalculateForm : public QMainWindow
+class CalculateForm : public QObject
 {
     Q_OBJECT
+  Q_PROPERTY(QString textOutput READ textOutput WRITE setTextOutput NOTIFY textOutputChanged)
+  Q_PROPERTY(QString textInput READ textInput WRITE setTextInput NOTIFY textInputChanged)
+
 
 public:
-    CalculateForm(QWidget *parent = nullptr);
-    ~CalculateForm();
+    CalculateForm(QObject *parent = nullptr);
+    QString textOutput();
+    QString textInput();
+    Q_INVOKABLE void setTextOutput(QString value);
+    Q_INVOKABLE void setTextInput(QString value);
+    Q_INVOKABLE void operations(QString contentButton);
 
-private slots:
-    void operations();
+signals:
+    void textOutputChanged();
+    void textInputChanged();
+
+
 
 private:
-    Ui::CalculateForm *ui;
+    QString m_textOutput = "0" ;
+    QString m_textInput;
 };
 #endif // MAINWINDOW_H

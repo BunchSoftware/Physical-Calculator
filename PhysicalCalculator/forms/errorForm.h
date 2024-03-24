@@ -3,23 +3,16 @@
 
 #include <QDialog>
 
-namespace Ui {
-class ErrorForm;
-}
-
-class ErrorForm : public QDialog
+class ErrorForm : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit ErrorForm(QWidget *parent = nullptr);
-    ~ErrorForm();
+    explicit ErrorForm(QObject *parent = nullptr);
 
 private slots:
-    void on_pushButton_clicked();
 
 private:
-    Ui::ErrorForm *ui;
 };
 
 #endif // DIALOG_H

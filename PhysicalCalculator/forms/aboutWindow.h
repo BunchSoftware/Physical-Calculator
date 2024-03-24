@@ -1,25 +1,17 @@
 #ifndef ABOUTWINDOW_H
 #define ABOUTWINDOW_H
-
 #include <QDialog>
 
-namespace Ui {
-  class AboutWindow;
-}
-
-class AboutWindow : public QDialog
+class AboutWindow : public QObject
 {
   Q_OBJECT
 
 public:
-  explicit AboutWindow(QWidget *parent = nullptr);
-  ~AboutWindow();
+  explicit AboutWindow(QObject *parent = nullptr);
 
 private slots:
-  void on_pushButton_clicked();
 
 private:
-  Ui::AboutWindow *ui;
 };
 
 #endif // ABOUTWINDOW_H

@@ -1,22 +1,17 @@
-#ifndef FAMILIARIZATION_H
-#define FAMILIARIZATION_H
+#ifndef FAMILIARIZATIONFORM_H
+#define FAMILIARIZATIONFORM_H
 
 #include <QWidget>
 
-namespace Ui {
-  class Familiarization;
-}
-
-class Familiarization : public QWidget
+class FamiliarizationForm : public QObject
 {
   Q_OBJECT
 
 public:
-  explicit Familiarization(QWidget *parent = nullptr);
-  ~Familiarization();
+  explicit FamiliarizationForm(QObject *parent = nullptr);
+  ~FamiliarizationForm();
 
 private:
-  Ui::Familiarization *ui;
 };
 
 #endif // FAMILIARIZATION_H

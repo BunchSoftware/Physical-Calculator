@@ -3,14 +3,14 @@
 
 #include <QWidget>
 
-class parser : public QObject
+class ParserForm : public QObject
 {
   Q_OBJECT
   Q_PROPERTY(QString textOutput READ textOutput WRITE setTextOutput NOTIFY textOutputChanged)
   Q_PROPERTY(QString textInput READ textInput WRITE setTextInput NOTIFY textInputChanged)
 
 public:
-  explicit parser(QObject *parent = nullptr);
+  explicit ParserForm(QObject *parent = nullptr);
   QString textOutput();
   QString textInput();
   Q_INVOKABLE void setTextOutput(QString value);

@@ -1,26 +1,24 @@
 #include "parser.h"
-#include "ui_parser.h"
 #include "library/interpreter.h"
 
-using namespace Interpreter;
 using namespace std;
 
-parser::parser(QObject *parent) : QObject(parent)
+Parser::Parser(QObject *parent) : QObject(parent)
 {
 
 }
 
-QString parser::textOutput()
+QString Parser::textOutput()
 {
   return m_textOutput;
 }
 
-QString parser::textInput()
+QString Parser::textInput()
 {
   return m_textInput;
 }
 
-void parser::setTextOutput(QString value)
+void Parser::setTextOutput(QString value)
 {
   if(m_textOutput != value)
   {
@@ -29,7 +27,7 @@ void parser::setTextOutput(QString value)
   }
 }
 
-void parser::setTextInput(QString value)
+void Parser::setTextInput(QString value)
 {
   if(m_textInput != value)
   {
@@ -39,12 +37,11 @@ void parser::setTextInput(QString value)
     }
 }
 
-void parser::calculate()
+void Parser::calculate()
 {
-  qDebug("Что");
   try {
     std::wstring text = textInput().toStdWString();
-    double result = InterpreteExperssion(text);
+    double result = Interpreter::InterpreteExperssion(text);
     setTextOutput("Результат: " + QString::number(result));
   }
   catch (...) {

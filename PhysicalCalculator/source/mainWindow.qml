@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.3
 import Qt.labs.animation 1.0
 import Qt.labs.calendar 1.0
 import QtGraphicalEffects 1.0
+import Forms 1.0
 
 ApplicationWindow {
     id: applicationWindow
@@ -11,6 +12,10 @@ ApplicationWindow {
     minimumWidth: 1000
     minimumHeight: 700
     title: qsTr("PhysicalCalculator")
+
+    MainWindow {
+        id: mainWindowGeneric
+    }
 
     ColumnLayout {
         id: columnLayout
@@ -103,25 +108,40 @@ ApplicationWindow {
                     id: createProject
                     shortcut: "Ctrl+N"
                     text: "Создать проект"
+                    onTriggered: {
+                        mainWindowGeneric.onCreateProjectTriggered()
+                    }
                 }
                 Action {
                     id: openProject
                     shortcut: "Ctrl+O"
                     text: "Открыть проект"
+                    onTriggered: {
+                        mainWindowGeneric.onOpenProjectTriggered()
+                    }
                 }
                 Action {
                     id: lastProject
                     text: "Недавние проекты"
+                    onTriggered: {
+                        mainWindowGeneric.onLastProjectTriggered()
+                    }
                 }
                 Action {
                     id: saveProject
                     shortcut: "Ctrl+S"
                     text: "Сохранить проект"
+                    onTriggered: {
+                        mainWindowGeneric.onSaveProjectTriggered()
+                    }
                 }
                 Action {
                     id: closeProject
                     shortcut: "Ctrl+Shift+W"
                     text: "Закрыть проект"
+                    onTriggered: {
+                        mainWindowGeneric.onCloseProjectTriggered()
+                    }
                 }
                 Action {
                     id: quitAplication
@@ -219,6 +239,9 @@ ApplicationWindow {
 
                 MenuItem {
                     text: "Закрыть все вкладки"
+                    onTriggered: {
+                        tabBar.closeAllTab()
+                    }
                 }
             }
             Button {
@@ -302,19 +325,34 @@ ApplicationWindow {
 
                 MenuItem {
                     text: "Калькулятор"
+                    onTriggered: {
+                        tabBar.addCalculatorTab()()
+                    }
                 }
 
                 MenuItem {
                     text: "Физический калькулятор"
+                    onTriggered: {
+                        tabBar.addPhysicalCalculatorTab()
+                    }
                 }
                 MenuItem {
                     text: "Построение графиков"
+                    onTriggered: {
+                        tabBar.addPlottingTab()
+                    }
                 }
                 MenuItem {
                     text: "Математический парсер"
+                    onTriggered: {
+                        tabBar.addParserTab()
+                    }
                 }
                 MenuItem {
                     text: "Ознакомление с программой"
+                    onTriggered: {
+                        tabBar.addFamiliarizationTab()
+                    }
                 }
             }
             Menu {
@@ -360,6 +398,9 @@ ApplicationWindow {
 
                 MenuItem {
                     text: "Ознакомление с документацией"
+                    onTriggered: {
+                        mainWindowGeneric.onAboutDocumentationTriggered()
+                    }
                 }
                 MenuItem {
                     text: "О программе Physical Calculator"
@@ -397,13 +438,22 @@ ApplicationWindow {
 
                 MenuItem {
                     text: "Сообщить о проблеме"
+                    onTriggered: {
+                        mainWindowGeneric.onReportProblemTriggered()
+                    }
                 }
 
                 MenuItem {
                     text: "Предложить функцию"
+                    onTriggered: {
+                        mainWindowGeneric.onSuggestFeatureTriggered()
+                    }
                 }
                 MenuItem {
                     text: "Мой отзыв"
+                    onTriggered: {
+                        mainWindowGeneric.onGetReviewTriggered()
+                    }
                 }
             }
         }
@@ -411,23 +461,33 @@ ApplicationWindow {
         ListModel {
             id: modelTabBar
             ListElement {
+                indexTab: 0
                 nameTab: "CalculateForm"
+                sourceTab: "qrc:/calculateForm.qml"
                 isPinned: false
             }
             ListElement {
+                indexTab: 1
                 nameTab: "PhysicalCalculatorForm"
+                sourceTab: "qrc:/physicalCalculatorForm.qml"
                 isPinned: false
             }
             ListElement {
+                indexTab: 2
                 nameTab: "ParserForm"
+                sourceTab: "qrc:/parserForm.qml"
                 isPinned: false
             }
             ListElement {
+                indexTab: 3
+                nameTab: "PlottingForm"
+                sourceTab: "qrc:/plottingForm.qml"
+                isPinned: false
+            }
+            ListElement {
+                indexTab: 4
                 nameTab: "FamiliarizationForm"
-                isPinned: false
-            }
-            ListElement {
-                nameTab: "ErrorForm"
+                sourceTab: "qrc:/familiarizationForm.qml"
                 isPinned: false
             }
         }
@@ -444,12 +504,62 @@ ApplicationWindow {
                     color: "#dde3e9"
                 }
 
+                function closeAllTab() {
+                    modelTabBar.clear()
+                }
+                function addCalculatorTab() {
+                    modelTabBar.append({
+                                           "indexTab": modelTabBar.count,
+                                           "nameTab": "CalculateForm",
+                                           "sourceTab": "qrc:/calculateForm.qml",
+                                           "isPinned": false
+                                       })
+                }
+                function addPhysicalCalculatorTab() {
+                    modelTabBar.append({
+                                           "indexTab": modelTabBar.count,
+                                           "nameTab": "PhysicalCalculatorForm",
+                                           "sourceTab": "qrc:/physicalCalculatorForm.qml",
+                                           "isPinned": false
+                                       })
+                }
+                function addParserTab() {
+                    modelTabBar.append({
+                                           "indexTab": modelTabBar.count,
+                                           "nameTab": "ParserForm",
+                                           "sourceTab": "qrc:/parserForm.qml",
+                                           "isPinned": false
+                                       })
+                }
+                function addPlottingTab() {
+                    modelTabBar.append({
+                                           "indexTab": modelTabBar.count,
+                                           "nameTab": "PlottingForm",
+                                           "sourceTab": "qrc:/plottingForm.qml",
+                                           "isPinned": false
+                                       })
+                }
+                function addFamiliarizationTab() {
+                    modelTabBar.append({
+                                           "indexTab": modelTabBar.count,
+                                           "nameTab": "FamiliarizationForm",
+                                           "sourceTab": "qrc:/familiarizationForm.qml",
+                                           "isPinned": false
+                                       })
+                }
+
                 spacing: 0
                 Repeater {
                     model: modelTabBar
+                    property int indexTab
                     property string nameTab
                     property bool isPinned
+
                     TabButton {
+                        width: {
+                            if (modelTabBar.count <= 5)
+                                return 200
+                        }
                         Layout.fillWidth: true
 
                         background: Rectangle {
@@ -472,12 +582,13 @@ ApplicationWindow {
                                 if (parent.hovered && parent.focus == false)
                                     return true
                                 else
-                                    false
+                                    return false
                             }
                         }
 
                         Button {
                             id: closeButton
+                            focusPolicy: "NoFocus"
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.rightMargin: 10
@@ -497,6 +608,7 @@ ApplicationWindow {
                             }
 
                             Image {
+                                id: imageClose
                                 anchors.fill: parent
                                 anchors.margins: 2
                                 source: "qrc:/images/close-button-black.png"
@@ -508,9 +620,17 @@ ApplicationWindow {
                                 else
                                     closeButtonHover.visible = false
                             }
+
+                            onClicked: {
+                                modelTabBar.remove(indexTab)
+
+                                for (var i = 0; i < modelTabBar.count; i++)
+                                    modelTabBar.setProperty(i, "indexTab", i)
+                            }
                         }
 
                         Button {
+                            focusPolicy: "NoFocus"
                             id: pinnedButton
                             anchors.right: closeButton.left
                             anchors.verticalCenter: parent.verticalCenter
@@ -545,15 +665,15 @@ ApplicationWindow {
                             }
 
                             onClicked: {
+
                                 if (isPinned) {
                                     imagePinned.rotation = 0
                                     isPinned = false
                                 } else {
                                     imagePinned.rotation = 90
+                                    modelTabBar.move(indexTab, 0, 1)
                                     isPinned = true
                                 }
-
-                                parent.focus = true
                             }
                         }
 
@@ -593,11 +713,12 @@ ApplicationWindow {
                         onFocusChanged: {
                             if (focus) {
                                 tabButtonBackground.color = "white"
-                                imageClose.source = "qrc:/images/Close.png"
                             } else {
                                 tabButtonBackground.color = "#dde3e9"
-                                imageClose.source = "qrc:/images/Close.png"
                             }
+                        }
+                        onClicked: {
+                            parent.activeFocusOnTab = true
                         }
                     }
                 }
@@ -622,40 +743,17 @@ ApplicationWindow {
                 anchors.fill: parent
                 currentIndex: tabBar.currentIndex
 
-                Item {
-                    Loader {
+                Repeater {
+                    anchors.fill: parent
+                    model: modelTabBar
+
+                    property string sourceTab
+                    Item {
                         anchors.fill: parent
-                        source: "qrc:/calculateForm.qml"
-                    }
-                }
-                Item {
-                    Loader {
-                        anchors.fill: parent
-                        source: "qrc:/physicalCalculatorForm.qml"
-                    }
-                }
-                Item {
-                    Loader {
-                        anchors.fill: parent
-                        source: "qrc:/parserForm.qml"
-                    }
-                }
-                Item {
-                    Loader {
-                        anchors.fill: parent
-                        source: "qrc:/familiarizationForm.qml"
-                    }
-                }
-                Item {
-                    Loader {
-                        anchors.fill: parent
-                        source: "qrc:/errorForm.qml"
-                    }
-                }
-                Item {
-                    Loader {
-                        anchors.fill: parent
-                        source: "qrc:/aboutForm.qml"
+                        Loader {
+                            anchors.fill: parent
+                            source: sourceTab
+                        }
                     }
                 }
             }
@@ -681,10 +779,3 @@ ApplicationWindow {
         anchors.fill: parent
     }
 }
-
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/
-

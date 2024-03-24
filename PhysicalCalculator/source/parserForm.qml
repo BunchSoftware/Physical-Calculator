@@ -9,7 +9,7 @@ import Forms 1.0
 Item {
     id: root
 
-    Parser {
+    ParserForm {
         id: parserGeneric
     }
 

@@ -4,7 +4,8 @@
 #include "QQmlApplicationEngine"
 #include "QGuiApplication"
 #include "forms/physicalCalculateForm.h"
-#include "forms/Parser.h"
+#include "forms/parserForm.h"
+#include "forms/calculateForm.h"
 
 int main(int argc, char **argv)
 {
@@ -12,7 +13,9 @@ int main(int argc, char **argv)
 
   QGuiApplication app(argc, argv);
 
-  qmlRegisterType<parser>("Forms", 1, 0, "Parser");
+  qmlRegisterType<ParserForm>("Forms", 1, 0, "ParserForm");
+  qmlRegisterType<CalculateForm>("Forms", 1, 0, "CalculateForm");
+  qmlRegisterType<MainWindow>("Forms", 1, 0, "MainWindow");
 
   QQmlApplicationEngine engine;
   const QUrl url(QStringLiteral("qrc:/mainWindow.qml"));

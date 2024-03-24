@@ -5,31 +5,23 @@
 #include <QTimer>
 #include "library/qcustomplot.h"
 
-namespace Ui {
-class PlottingForm;
-}
-
-class PlottingForm : public QWidget
+class PlottingForm : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit PlottingForm(QWidget *parent = nullptr);
-    ~PlottingForm();
+    explicit PlottingForm(QObject *parent = nullptr);
 signals:
     void PlottingFormWindow();
 
+public slots:
+//    void on_pushButton_clicked();
+//    void TimerSlot();
 
-
-private slots:
-    void on_pushButton_clicked();
-    void TimerSlot();
-
-    void on_comboBox_activated(int index);
-    void UpdateLableAndLineInWindow(QString textLabel1, QString textLabel2, QString textLabel3);
+//    void on_comboBox_activated(int index);
+//    void UpdateLableAndLineInWindow(QString textLabel1, QString textLabel2, QString textLabel3);
 
 private:
-    Ui::PlottingForm *ui;
     double xBegin , xEnd,h,X;
     int N;
     QVector<double> x,y;
